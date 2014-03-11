@@ -1,0 +1,22 @@
+body.with-navbar-top {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+@media (max-width: 277px) {
+	body.with-navbar-top {
+		padding-top: 100px;
+	}
+}
+.main-intro {
+	height: 75px;
+	border-bottom: 2px solid @navbar-inverse-border;
+	background: url('../img/header.jpg') no-repeat left top;
+/*	background-size: cover; */
+	.background-cover();
+}
+@media (min-width: 768px) {
+	.main-intro {
+		height: 150px;
+		border-bottom-width: 4px;
+	}
+}
