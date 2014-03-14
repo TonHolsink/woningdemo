@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body class="with-navbar-top">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img class="logo" src="img/mijnwoonwaard.png" /></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				</ul>
+				<div class="navbar-right status">
+					Ingelogd als: Ton Holsink
+				</div>
+			</div><!--/.navbar-collapse -->
+			</div>
+		</div>
+
+		<div class="main-intro"> </div>
+		<div class="container">
+			<div class="main-content">
+				<div class="content-area">
+					<div class="left-and-right">
+						<div class="left">
+							<div>
+								<h1>Wat wilt ik</h1>
+								<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-key fa-lg"></i> Sleutel aanvragen</button>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> Afspraak maken</button>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-key fa-lg"></i> Huur opzeggen</button>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-money fa-lg"></i> Betalingsregeling</button>
+								</div>
+							</div>
+							<div>
+								<h1>Mijn afspraken</h1>
+								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-key fa-lg"></i> Afspraak 1</button>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 1 details</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> Afspraak 2</button>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 2 details</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-key fa-lg"></i> Afspraak 3</button>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 3 details</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-money fa-lg"></i> Afspraak 4</button>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 4 details</span>
+								</div>
+<!--
+								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
+									<span class="btn list-group-item text-left active">Afspraak 1</span>
+									<span class="list-group-item list-group-item-details">Afspraak 1 details</span>
+									<span class="btn list-group-item text-left">Afspraak 2</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 2 details</span>
+									<span class="btn list-group-item text-left">Afspraak 3</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 3 details</span>
+									<span class="btn list-group-item text-left">Afspraak 4</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 4 details</span>
+								</div>
+-->
+							</div>
+						</div>
+						<div class="right">
+							<div>
+								<h1>Wie ben ik</h1>
+								<div class="list-group">
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Naam</h4>
+										<p class="list-group-item-text">H. Huurder</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Adres</h4>
+										<p class="list-group-item-text">Straat 72 1213 ZZ Plaats</p>
+									</span>
+								</div>
+							</div>
+							<div>
+								<h1>Mijn huis</h1>
+								<div class="list-group">
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Type</h4>
+										<p class="list-group-item-text">3 kamer appartement</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Oppervlakte</h4>
+										<p class="list-group-item-text">100 m2</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Extra's</h4>
+										<p class="list-group-item-text">Garage, parkeerplaats en berging</p>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="footer">
+				<hr>
+				<footer>
+					<p>&copy; YourRequest 2014</p>
+				</footer>
+			</div>
+		</div>
+
+
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+(function() {
+
+	/**
+	 * The jQuery $(document).ready() block.
+	 */
+	$(function() {
+
+		//BODY CLICK EVENTS
+		$("body").click(function(event) {
+			var el = $(event.target);
+			if (el.parents('#afspraken').length && el.hasClass('btn')) {
+				$("#afspraken .list-group-item").each(function(i, item) {
+					if ($(item).hasClass('list-group-item-details')) {
+						$(item).addClass('hidden');
+					} else {
+						// $(item).removeClass('active');
+					}
+				});
+				// $("#afspraken .list-group-item-details").each(function(i, item) {
+				// 	$(item).addClass('hidden');
+				// });
+				// el.addClass('active');
+				el.next().removeClass('hidden');
+			}
+		});
+
+	});
+
+})();
+
+
+</script>
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+	</body>
+</html>
