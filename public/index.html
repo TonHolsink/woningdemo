@@ -61,8 +61,8 @@
 								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
 									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> wo 23-04-14 10.30u</button>
 									<span class="list-group-item list-group-item-details hidden">Onderhoud cv-installatie<br/>Fa. kachel</span>
-									<button class="nieuwe_afspraak btn btn-default text-left hidden" type="button"><i class="fa fa-wrench fa-lg"></i> wo 25-05-14 19.00u</button>
-									<span class="nieuwe_afspraak list-group-item list-group-item-details hidden">Reparatie wastafel<br/>Jansen Loodgieters<br/>De heer J. Jansen</span>
+									<button id="nieuwe_afspraak" class="btn btn-default text-left hidden" type="button"><i class="fa fa-wrench fa-lg"></i> wo 25-05-14 19.00u</button>
+									<span class="list-group-item list-group-item-details hidden">Reparatie wastafel<br/>Jansen Loodgieters<br/>De heer J. Jansen</span>
 									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> vr 01-06-14 20.00u</button>
 									<span class="list-group-item list-group-item-details hidden">Huurders overleg<br/>Schoutenstraat 56</span>
 									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> ma 17-08-14 9.00u</button>
@@ -179,9 +179,10 @@
 		//check nieuwe afspraak
 		var nieuwe_afspraak = url_query("todo");
 		if (nieuwe_afspraak) {
-			$(".nieuwe_afspraak").each(function(i, el) {
-				$(el).removeClass("hidden")
-			});
+			var el = $("#nieuwe_afspraak");
+			$(el).removeClass("hidden");
+			$(el).trigger("click");
+			$(el).focus();
 		}
 
 	});

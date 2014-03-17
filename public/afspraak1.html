@@ -77,7 +77,7 @@
 							<div class="panel-heading"><strong>Over welke ruimte gaat het?</strong></div>
 							<div class="panel-body">
 								<select class="forminput form-control" name="welke_ruimte">
-									<option>Maak uw keuze ...</option>
+									<option value="0">Maak uw keuze ...</option>
 									<option>Dak</option>
 									<option>Dakkapel</option>
 									<option>Gevel</option>
@@ -94,7 +94,7 @@
 							<div class="panel-heading"><strong>Om welk onderdeel in de ruimte gaat het?</strong></div>
 							<div class="panel-body">
 								<select class="forminput form-control" name="welk_onderdeel">
-									<option>Maak uw keuze ...</option>
+									<option value="0">Maak uw keuze ...</option>
 									<option>Deur</option>
 									<option>Elektra</option>
 									<option>Plafond</option>
@@ -109,7 +109,7 @@
 							<div class="panel-heading"><strong>Wat is het defect?</strong></div>
 							<div class="panel-body">
 								<select class="forminput form-control" name="welk_defect">
-									<option>Maak uw keuze ...</option>
+									<option value="0">Maak uw keuze ...</option>
 									<option value="show_next">gescheurd</option>
 									<option value="show_next">gebarsten</option>
 									<option value="show_next">lekt</option>
@@ -207,6 +207,27 @@
 
 (function() {
 
+	function getTypeOfInput(el) {
+		return el.type || el.tagName.toLowerCase();
+	};
+
+	function resetAllInputsInPanel(panel) {
+		if (panel) {
+			var inputs = panel.find(".forminput");
+			inputs.each(function(i, item) {
+				var type = getTypeOfInput(item);
+				switch(type) {
+					case 'radio':
+						$(item).attr("checked", false);
+						break;
+					case 'select-one':
+						$(item).val("0");
+						break;
+				}
+			});
+		}
+	};
+
 	function hideNextQuestions(input) {
 		var panel = $(input).closest(".question-panel")[0];
 		if (panel){
@@ -216,7 +237,9 @@
 					$(item).hide();
 				});
 				if ($(input).val() == "show_next") {
-					$(nextQuestions[0]).show();
+					var question = $(nextQuestions[0]);
+					resetAllInputsInPanel(question);
+					question.show();
 				}
 			}
 
