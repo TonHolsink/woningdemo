@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body class="with-navbar-top">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><img class="logo" src="img/mijnwoonwaard.png" /></a>
+			</div> <!-- .navbar-header -->
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#about">Over</a></li>
+				<li><a href="#contact">Contact</a></li>
+				</ul>
+				<div class="navbar-right status">
+					Ingelogd als: Ton Holsink
+				</div>
+			</div><!-- .navbar-collapse -->
+			</div> <!-- .container -->
+		</div> <!-- .navbar -->
+
+		<div class="main-intro"> </div>
+		<div class="container">
+			<div class="main-content">
+				<div class="content-area">
+<!--
+					<ul class="nav nav-pills nav-justified">
+						<li class="active"><a>Afspraak 1</a></li>
+						<li><a>Afspraak 2<i class="fa fa-forward pull-right"></i></a></li>
+						<li><a href="#">Afspraak 3</a></li>
+					</ul>
+-->
+					<h1>Aanvragen reparatie</h1>
+					<p>Hieronder kunt u reparatieverzoeken indienen.<br/>
+					Het formulier stelt u steeds vragen op basis van wat u gekozen heeft.</p>
+
+					<form id="form" action="afspraak2.html">
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Betreft het een spoed reparatie?</strong></div>
+							<div class="panel-body">
+								<label class="font-weight-normal"><input id="first_question" class="forminput" name="spoed_reparatie" type="radio"> Ja</label>
+								<label class="font-weight-normal"><input class="forminput" name="spoed_reparatie" type="radio" value="show_next"> Nee</label>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Over welk type ruimte gaat het?</strong></div>
+							<div class="panel-body">
+								<label class="font-weight-normal"><input class="forminput" name="type_ruimte" type="radio" value="show_next"> Eigen woning</label>
+								<label class="font-weight-normal"><input class="forminput" name="type_ruimte" type="radio"> Algemene / gemeenschappelijke ruimte</label>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Over welke ruimte gaat het?</strong></div>
+							<div class="panel-body">
+								<select class="forminput form-control" name="welke_ruimte">
+									<option>Maak uw keuze ...</option>
+									<option>Dak</option>
+									<option>Dakkapel</option>
+									<option>Gevel</option>
+									<option>Hal / Gang / Trap</option>
+									<option>Keuken</option>
+									<option value="show_next">Slaapkamer</option>
+									<option>Toilet</option>
+									<option>Woonkamer</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Om welk onderdeel in de ruimte gaat het?</strong></div>
+							<div class="panel-body">
+								<select class="forminput form-control" name="welk_onderdeel">
+									<option>Maak uw keuze ...</option>
+									<option>Deur</option>
+									<option>Elektra</option>
+									<option>Plafond</option>
+									<option>Vloer</option>
+									<option>Wanden</option>
+									<option value="show_next">Wastafel</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Wat is het defect?</strong></div>
+							<div class="panel-body">
+								<select class="forminput form-control" name="welk_defect">
+									<option>Maak uw keuze ...</option>
+									<option value="show_next">gescheurd</option>
+									<option value="show_next">gebarsten</option>
+									<option value="show_next">lekt</option>
+									<option value="show_next">zit los</option>
+									<option value="show_next">roest</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Uw lokatie</strong></div>
+							<div class="panel-body">
+								<table class="table">
+									<tr>
+										<th>Naam:</th>
+										<td>B.P. de Jong</td>
+									</tr>
+									<tr>
+										<th>Adres:</th>
+										<td>Harselaarseweg 22</td>
+									</tr>
+									<tr>
+										<th>Postcode:</th>
+										<td>3771 MB</td>
+									</tr>
+									<tr>
+										<th>Plaats:</th>
+										<td>Barneveld</td>
+									</tr>
+									<tr>
+										<th>Telefoonnummer:</th>
+										<td>0342 440439</td>
+									</tr>
+									<tr>
+										<th>E-mailadres:</th>
+										<td>bas.dejong@yourrequest.nl</td>
+									</tr>
+								</table>
+								Aanvullende informatie:<br/>
+								<textarea class="form-control" rows="5"></textarea>
+							</div>
+							<div class="panel-footer">
+								<button id="submit_button" type="button">Versturen</button>
+							</div>
+						</div>
+
+						<div id="beschikbare_tijdstippen" class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Beschikbare tijdstippen</strong></div>
+							<div class="panel-body">
+								Wij hebben voor u de volgende tijdstippen beschikbaar waarop de monteur langs kan komen.<br/>
+								We verwachten dat de reparatie ongeveer 15 minuten duurt.
+
+								<div class="list-group tijdstippen">
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Maandag 24 maart</h4>
+										<p class="list-group-item-text">10 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Dinsdag 25 maart</h4>
+										<p class="list-group-item-text">19 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Donderdag 27 maart</h4>
+										<p class="list-group-item-text">10 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Ik kan niet op deze momenten.</h4>
+										<p class="list-group-item-text">Geef me andere opties.</p>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</form>
+
+				</div> <!-- .content-area -->
+			</div> <!-- .main-content -->
+		</div> <!-- .container -->
+
+		<div class="container">
+			<div class="footer">
+				<hr>
+				<footer>
+					<p>&copy; YourRequest 2014</p>
+				</footer>
+			</div> <!-- footer -->
+		</div> <!-- container -->
+
+
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function() {
+
+	function hideNextQuestions(input) {
+		var panel = $(input).closest(".question-panel")[0];
+		if (panel){
+			var nextQuestions = $(panel).nextAll();
+			if (nextQuestions) {
+				nextQuestions.each(function(i, item) {
+					$(item).hide();
+				});
+				if ($(input).val() == "show_next") {
+					$(nextQuestions[0]).show();
+				}
+			}
+
+		}
+	};
+
+	// function hideNextQuestions(input) { };
+
+	/**
+	 * The jQuery $(document).ready() block.
+	 */
+
+	$("body").click(function(event) {
+		var el = $(event.target);
+		if (el.attr("id") == "submit_button") {
+			$("#beschikbare_tijdstippen").show();
+		} else if (el.parents(".tijdstippen").length) {
+			$("#form").submit();
+		}
+	});
+
+	$(function() {
+		$(".forminput").each(function(i, input) {
+			$(input).click(function(event) {
+				hideNextQuestions(input);
+			});
+		});
+
+		//Alleen eerste vraag zichtbaar maken
+		hideNextQuestions($("#first_question"));
+	});
+
+})();
+
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src='//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+//]]>
+</script>
+
+	</body>
+</html>

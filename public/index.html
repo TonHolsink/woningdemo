@@ -18,87 +18,187 @@
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img class="logo" src="img/mijnwoonwaard.png" /></a>
+				</div> <!-- .navbar-header -->
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="#about">Over</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="navbar-right status">
+						Ingelogd als: Ton Holsink
+					</div> <!-- .navbar-right -->
+				</div> <!-- .navbar-collapse -->
+			</div> <!-- .container -->
+		</div> <!-- .navbar -->
+
+		<div class="main-intro"> </div>
 		<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#"><img class="logo" src="img/mijnwoonwaard.png" /></a>
-		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#contact">Contact</a></li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-				<ul class="dropdown-menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li class="dropdown-header">Nav header</li>
-				<li><a href="#">Separated link</a></li>
-				<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-			</ul>
-			<div class="navbar-right status">
-				Ingelogd als: Ton Holsink
-			</div>
-		</div><!--/.navbar-collapse -->
-		</div>
-	</div>
+			<div class="main-content">
+				<div class="content-area">
+					<div class="left-and-right">
+						<div class="left">
+							<div>
+								<h1>Wat wilt ik</h1>
+								<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+									<a class="btn btn-default text-left" href="#"><i class="fa fa-key fa-lg"></i> Sleutel aanvragen</a>
+									<a class="btn btn-default text-left" href="afspraak1.html"><i class="fa fa-user fa-lg"></i> Afspraak maken</a>
+									<a class="btn btn-default text-left" href="#"><i class="fa fa-times fa-lg"></i> Huur opzeggen</a>
+									<a class="btn btn-default text-left" href="#"><i class="fa fa-money fa-lg"></i> Betalingsregeling</a>
+								</div> <!-- .btn-group-vertical -->
+							</div>
+							<div>
+								<h1>Mijn afspraken</h1>
+								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> wo 23-04-14 10.30u</button>
+									<span class="list-group-item list-group-item-details hidden">Onderhoud cv-installatie<br/>Fa. kachel</span>
+									<button class="nieuwe_afspraak btn btn-default text-left hidden" type="button"><i class="fa fa-wrench fa-lg"></i> wo 25-05-14 19.00u</button>
+									<span class="nieuwe_afspraak list-group-item list-group-item-details hidden">Reparatie wastafel<br/>Jansen Loodgieters<br/>De heer J. Jansen</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> vr 01-06-14 20.00u</button>
+									<span class="list-group-item list-group-item-details hidden">Huurders overleg<br/>Schoutenstraat 56</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> ma 17-08-14 9.00u</button>
+									<span class="list-group-item list-group-item-details hidden">Schilderwerk kozijnen<br/>Fa. kwast</span>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> di 20-09-14 11.00u</button>
+									<span class="list-group-item list-group-item-details hidden">Afspraak ivm overlast<br/>Schoutenstraat 56</span>
+								</div> <!-- afspraken -->
+<!--
+								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
+									<span class="btn list-group-item text-left active">Afspraak 1</span>
+									<span class="list-group-item list-group-item-details">Afspraak 1 details</span>
+									<span class="btn list-group-item text-left">Afspraak 2</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 2 details</span>
+									<span class="btn list-group-item text-left">Afspraak 3</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 3 details</span>
+									<span class="btn list-group-item text-left">Afspraak 4</span>
+									<span class="list-group-item list-group-item-details hidden">Afspraak 4 details</span>
+								</div>
+-->
+							</div>
+						</div> <!-- .left -->
+						<div class="right">
+							<div>
+								<h1>Wie ben ik</h1>
+								<div class="list-group">
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Naam</h4>
+										<p class="list-group-item-text">H. Huurder</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Adres</h4>
+										<p class="list-group-item-text">Straat 72 1213 ZZ Plaats</p>
+									</span>
+								</div> <!-- .list-group -->
+							</div>
+							<div>
+								<h1>Mijn huis</h1>
+								<div class="list-group">
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Type</h4>
+										<p class="list-group-item-text">3 kamer appartement</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Oppervlakte</h4>
+										<p class="list-group-item-text">100 m2</p>
+									</span>
+									<span class="list-group-item">
+										<h4 class="list-group-item-heading">Extra's</h4>
+										<p class="list-group-item-text">Garage, parkeerplaats en berging</p>
+									</span>
+								</div> <!-- .list-group -->
+							</div>
+						</div> <!-- .right -->
+					</div> <!-- .left-and-right -->
+				</div> <!-- .content-area -->
+			</div> <!-- .main-content -->
+		</div> <!-- .container -->
 
-	<div class="main-intro">
-
-	</div>
-	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div class="jumbotron">
 		<div class="container">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-		<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-		</div>
-	</div>
+			<div class="footer">
+				<hr>
+				<footer>
+					<p>&copy; YourRequest 2014</p>
+				</footer>
+			</div> <!-- footer -->
+		</div> <!-- .container -->
 
-	<div class="container">
-		<!-- Example row of columns -->
-		<div class="row">
-		<div class="col-lg-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-		</div>
-		<div class="col-lg-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-		 </div>
-		<div class="col-lg-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-		</div>
-		</div>
 
-		<hr>
-
-		<footer>
-		<p>&copy; Company 2013</p>
-		</footer>
-	</div> <!-- /container -->
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
 
-		<script>
-			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-			g.src='//www.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g,s)}(document,'script'));
-		</script>
+<script type="text/javascript">
+//<![CDATA[
+
+(function() {
+
+	/**
+	 * The jQuery $(document).ready() block.
+	 */
+	$(function() {
+
+		// Parse URL Queries
+		function url_query( query ) {
+			query = query.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var expr = "[\\?&]"+query+"=([^&#]*)";
+			var regex = new RegExp( expr );
+			var results = regex.exec( window.location.href );
+			if ( results !== null ) {
+				return results[1];
+			} else {
+				return false;
+			}
+		};
+
+		//BODY CLICK EVENTS
+		$("body").click(function(event) {
+			var el = $(event.target);
+			if (el.parents('#afspraken').length && el.hasClass('btn')) {
+				$("#afspraken .list-group-item").each(function(i, item) {
+					if ($(item).hasClass('list-group-item-details')) {
+						$(item).addClass('hidden');
+					} else {
+						// $(item).removeClass('active');
+					}
+				});
+				// $("#afspraken .list-group-item-details").each(function(i, item) {
+				// 	$(item).addClass('hidden');
+				// });
+				// el.addClass('active');
+				el.next().removeClass('hidden');
+			}
+		});
+
+		//check nieuwe afspraak
+		var nieuwe_afspraak = url_query("todo");
+		if (nieuwe_afspraak) {
+			$(".nieuwe_afspraak").each(function(i, el) {
+				$(el).removeClass("hidden")
+			});
+		}
+
+	});
+
+})();
+
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src='//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+//]]>
+</script>
+
 	</body>
 </html>
