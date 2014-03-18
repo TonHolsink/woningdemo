@@ -229,7 +229,8 @@
 
 	function scrollIntoView(el) {
 		$('html, body').animate({
-			scrollTop: el.offset().top
+			//Beetje gokken (-50 compenseert voor menubar)
+			scrollTop: el.offset().top - 50
 		}, 1000);
 	};
 
