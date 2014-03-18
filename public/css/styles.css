@@ -3900,6 +3900,10 @@ a.list-group-item-danger.active:focus {
 .panel-body:after,
 .main-content:before,
 .main-content:after,
+.form-table .form-row:before,
+.form-table .form-row:after,
+.form-table-bordered .form-row:before,
+.form-table-bordered .form-row:after,
 .footer:before,
 .footer:after {
   content: " ";
@@ -3919,6 +3923,8 @@ a.list-group-item-danger.active:focus {
 .navbar-collapse:after,
 .panel-body:after,
 .main-content:after,
+.form-table .form-row:after,
+.form-table-bordered .form-row:after,
 .footer:after {
   clear: both;
 }
@@ -5561,29 +5567,78 @@ body.with-navbar-top {
     font-size: 40px;
   }
 }
-.main-content .left-and-right .left {
+.left-and-right .left {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .main-content .left-and-right .left {
+  .left-and-right .left {
     float: left;
     width: 50%;
   }
 }
-.main-content .left-and-right .right {
+.left-and-right .right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .main-content .left-and-right .right {
+  .left-and-right .right {
     float: left;
     width: 50%;
   }
+}
+.form-table,
+.form-table-bordered {
+  margin-bottom: 20px;
+}
+.form-table .form-row,
+.form-table-bordered .form-row {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2px;
+}
+.form-table .form-row .label-col,
+.form-table-bordered .form-row .label-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .form-table .form-row .label-col,
+  .form-table-bordered .form-row .label-col {
+    float: left;
+    width: 25%;
+  }
+}
+.form-table .form-row .input-col,
+.form-table-bordered .form-row .input-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .form-table .form-row .input-col,
+  .form-table-bordered .form-row .input-col {
+    float: left;
+    width: 75%;
+  }
+}
+@media (max-width: 768px) {
+  .form-table .form-row .input-col,
+  .form-table-bordered .form-row .input-col {
+    padding: 0;
+  }
+}
+.form-table-bordered .form-row {
+  border-top: 1px solid #dddddd;
+  padding: 8px;
 }
 .footer {
   margin-left: -15px;
