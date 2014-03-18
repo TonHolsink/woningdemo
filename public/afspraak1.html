@@ -245,7 +245,7 @@
 
 				//Als je bij een select "Maak uw keuze" kiest, dan alle vervolgvragen niet tonen
 				if ((getTypeOfInput(input) == "select-one") && ($(input).val() == "0")) return;
-				}
+
 				//Toon alleen de eerste vervolgvraag
 				var questionPanel = $(nextQuestionPanels[0]);
 				resetAllInputsInPanel(questionPanel);
