@@ -5567,28 +5567,100 @@ body.with-navbar-top {
     font-size: 40px;
   }
 }
-.left-and-right .left {
+.six-six .left {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .left-and-right .left {
+  .six-six .left {
     float: left;
     width: 50%;
   }
 }
-.left-and-right .right {
+.six-six .right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .left-and-right .right {
+  .six-six .right {
     float: left;
     width: 50%;
+  }
+}
+.four-eight .left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .four-eight .left {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.four-eight .right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .four-eight .right {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+.three-nine .left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .three-nine .left {
+    float: left;
+    width: 25%;
+  }
+}
+.three-nine .right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .three-nine .right {
+    float: left;
+    width: 75%;
+  }
+}
+.two-seven .left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .two-seven .left {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+.two-seven .right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .two-seven .right {
+    float: left;
+    width: 58.33333333%;
   }
 }
 .form-table,
@@ -5639,6 +5711,9 @@ body.with-navbar-top {
 .form-table-bordered .form-row {
   border-top: 1px solid #dddddd;
   padding: 8px;
+}
+label.label-radio {
+  margin-right: 20px;
 }
 .footer {
   margin-left: -15px;

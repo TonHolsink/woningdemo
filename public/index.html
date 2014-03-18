@@ -45,13 +45,13 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-					<div class="left-and-right">
+					<div class="six-six">
 						<div class="left">
 							<div>
-								<h1>Wat wilt ik</h1>
+								<h1>Wat wil ik</h1>
 								<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
 									<a class="btn btn-default text-left" href="#"><i class="fa fa-key fa-lg"></i> Sleutel aanvragen</a>
-									<a class="btn btn-default text-left" href="afspraak1.html"><i class="fa fa-user fa-lg"></i> Afspraak maken</a>
+									<a class="btn btn-default text-left" href="afspraak1.html"><i class="fa fa-wrench fa-lg"></i> Reparatieverzoek</a>
 									<a class="btn btn-default text-left" href="#"><i class="fa fa-times fa-lg"></i> Huur opzeggen</a>
 									<a class="btn btn-default text-left" href="#"><i class="fa fa-money fa-lg"></i> Betalingsregeling</a>
 								</div> <!-- .btn-group-vertical -->
@@ -60,15 +60,95 @@
 								<h1>Mijn afspraken</h1>
 								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
 									<button id="nieuwe_afspraak" class="btn btn-default text-left hidden" type="button"><i class="fa fa-wrench fa-lg"></i> wo 25-05-14 19.00u</button>
-									<span class="list-group-item list-group-item-details hidden">Reparatie wastafel<br/>Jansen Loodgieters<br/>De heer J. Jansen</br>Status: bevestigd</span>
+									<div class="list-group-item list-group-item-details hidden">
+										<div>
+											Reparatie wastafel<br/>Jansen Loodgieters
+										</div>
+										<table class="table table-condensed">
+											<thead>
+												<tr>
+													<th>Datum</th><th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25-05-14</td><td>bevestigd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> do 13-03-14 10.30u</button>
-									<span class="list-group-item list-group-item-details hidden">Onderhoud cv-installatie<br/>Fa. kachel</br>Status: voltooid</span>
-									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> di 11-02-14 20.00u</button>
-									<span class="list-group-item list-group-item-details hidden">Huurders overleg<br/>Schoutenstraat 56</br>Status: voltooid</span>
+									<div class="list-group-item list-group-item-details hidden">
+										<div>
+											Onderhoud cv-installatie<br/>Fa. Kachel
+										</div>
+										<table class="table table-condensed">
+											<thead>
+												<tr>
+													<th>Datum</th><th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25-05-14</td><td>bevestigd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> di 11-02-14 20.00u</button>
+									<div class="list-group-item list-group-item-details hidden">
+										<div>
+											Reparatie dakgoot<br/>Fa. de Bruin
+										</div>
+										<table class="table table-condensed">
+											<thead>
+												<tr>
+													<th>Datum</th><th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25-05-14</td><td>bevestigd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> ma 27-01-14 9.00u</button>
-									<span class="list-group-item list-group-item-details hidden">Schilderwerk kozijnen<br/>Fa. kwast</br>Status: voltooid</span>
-									<button class="btn btn-default text-left" type="button"><i class="fa fa-user fa-lg"></i> vr 10-01-14 11.00u</button>
-									<span class="list-group-item list-group-item-details hidden">Afspraak ivm overlast<br/>Schoutenstraat 56</br>Status: voltooid</span>
+									<div class="list-group-item list-group-item-details hidden">
+										<div>
+											Schilderwerk kozijnen<br/>Fa. Schilder
+										</div>
+										<table class="table table-condensed">
+											<thead>
+												<tr>
+													<th>Datum</th><th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25-05-14</td><td>bevestigd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<button class="btn btn-default text-left" type="button"><i class="fa fa-wrench fa-lg"></i> vr 10-01-14 11.00u</button>
+									<div class="list-group-item list-group-item-details hidden">
+										<div>
+											Onderhoud electrische installatie<br/>Fa. de Gier
+										</div>
+										<table class="table table-condensed">
+											<thead>
+												<tr>
+													<th>Datum</th><th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25-05-14</td><td>bevestigd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div> <!-- afspraken -->
 <!--
 								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
@@ -120,7 +200,7 @@
 								</div> <!-- .list-group -->
 							</div>
 						</div> <!-- .right -->
-					</div> <!-- .left-and-right -->
+					</div> <!-- .six-six -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->

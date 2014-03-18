@@ -60,16 +60,16 @@
 						<div class="question-panel panel panel-default">
 							<div class="panel-heading"><strong>Betreft het een spoed reparatie?</strong></div>
 							<div class="panel-body">
-								<label class="font-weight-normal"><input id="first_question" class="forminput" name="spoed_reparatie" type="radio"> Ja</label>
-								<label class="font-weight-normal"><input class="forminput" name="spoed_reparatie" type="radio" value="show_next"> Nee</label>
+								<label class="font-weight-normal label-radio"><input class="forminput" name="spoed_reparatie" type="radio"> Ja</label>
+								<label class="font-weight-normal label-radio"><input class="forminput" name="spoed_reparatie" type="radio""> Nee</label>
 							</div>
 						</div>
 
 						<div class="question-panel panel panel-default hidden">
 							<div class="panel-heading"><strong>Over welk type ruimte gaat het?</strong></div>
 							<div class="panel-body">
-								<label class="font-weight-normal"><input class="forminput" name="type_ruimte" type="radio" value="show_next"> Eigen woning</label>
-								<label class="font-weight-normal"><input class="forminput" name="type_ruimte" type="radio"> Algemene / gemeenschappelijke ruimte</label>
+								<label class="font-weight-normal label-radio"><input class="forminput" name="type_ruimte" type="radio""> Eigen woning</label>
+								<label class="font-weight-normal label-radio"><input class="forminput" name="type_ruimte" type="radio"> Algemene / gemeenschappelijke ruimte</label>
 							</div>
 						</div>
 
@@ -83,7 +83,7 @@
 									<option>Gevel</option>
 									<option>Hal / Gang / Trap</option>
 									<option>Keuken</option>
-									<option value="show_next">Slaapkamer</option>
+									<option>Slaapkamer</option>
 									<option>Toilet</option>
 									<option>Woonkamer</option>
 								</select>
@@ -100,7 +100,7 @@
 									<option>Plafond</option>
 									<option>Vloer</option>
 									<option>Wanden</option>
-									<option value="show_next">Wastafel</option>
+									<option>Wastafel</option>
 								</select>
 							</div>
 						</div>
@@ -110,11 +110,11 @@
 							<div class="panel-body">
 								<select class="forminput form-control" name="welk_defect">
 									<option value="0">Maak uw keuze ...</option>
-									<option value="show_next">gescheurd</option>
-									<option value="show_next">gebarsten</option>
-									<option value="show_next">lekt</option>
-									<option value="show_next">zit los</option>
-									<option value="show_next">roest</option>
+									<option>gescheurd</option>
+									<option>gebarsten</option>
+									<option>lekt</option>
+									<option>zit los</option>
+									<option>roest</option>
 								</select>
 							</div>
 						</div>
@@ -122,33 +122,32 @@
 						<div class="question-panel panel panel-default hidden">
 							<div class="panel-heading"><strong>Uw lokatie</strong></div>
 							<div class="panel-body">
-								<table class="table">
-									<tr>
-										<th>Naam:</th>
-										<td>B.P. de Jong</td>
-									</tr>
-									<tr>
-										<th>Adres:</th>
-										<td>Harselaarseweg 22</td>
-									</tr>
-									<tr>
-										<th>Postcode:</th>
-										<td>3771 MB</td>
-									</tr>
-									<tr>
-										<th>Plaats:</th>
-										<td>Barneveld</td>
-									</tr>
-									<tr>
-										<th>Telefoonnummer:</th>
-										<td>0342 440439</td>
-									</tr>
-									<tr>
-										<th>E-mailadres:</th>
-										<td>bas.dejong@yourrequest.nl</td>
-									</tr>
-								</table>
-								Aanvullende informatie:<br/>
+							<div class="form-table-bordered">
+								<div class="form-row">
+									<div class="label-col"><strong>Naam:</strong></div>
+									<div class="input-col">B.P. de Jong</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Adres:</strong></div>
+									<div class="input-col">Harselaarseweg 22</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Postcode:</strong></div>
+									<div class="input-col">3771 MB</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Plaats:</strong></div>
+									<div class="input-col">Barneveld</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Telefoonnummer:</strong></div>
+									<div class="input-col">0342 440439</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>E-mailadres:</strong></div>
+									<div class="input-col">bas.dejong@yourrequest.nl</div>
+								</div>
+								<strong>Aanvullende informatie:</strong><br/>
 								<textarea class="form-control" rows="5"></textarea>
 							</div>
 							<div class="panel-footer">
