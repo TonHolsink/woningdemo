@@ -5615,6 +5615,42 @@ body.with-navbar-top {
     width: 66.66666667%;
   }
 }
+.four-four-four .left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .four-four-four .left {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.four-four-four .middle {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .four-four-four .middle {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.four-four-four .right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .four-four-four .right {
+    float: left;
+    width: 33.33333333%;
+  }
+}
 .three-nine .left {
   position: relative;
   min-height: 1px;

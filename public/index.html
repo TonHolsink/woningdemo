@@ -174,18 +174,6 @@
 										</table>
 									</div>
 								</div> <!-- afspraken -->
-<!--
-								<div id="afspraken" class="btn-group-vertical" style="width: 100%;">
-									<span class="btn list-group-item text-left active">Afspraak 1</span>
-									<span class="list-group-item list-group-item-details">Afspraak 1 details</span>
-									<span class="btn list-group-item text-left">Afspraak 2</span>
-									<span class="list-group-item list-group-item-details hidden">Afspraak 2 details</span>
-									<span class="btn list-group-item text-left">Afspraak 3</span>
-									<span class="list-group-item list-group-item-details hidden">Afspraak 3 details</span>
-									<span class="btn list-group-item text-left">Afspraak 4</span>
-									<span class="list-group-item list-group-item-details hidden">Afspraak 4 details</span>
-								</div>
--->
 							</div>
 						</div> <!-- .left -->
 						<div class="right">
@@ -241,6 +229,7 @@
 
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/tools.js"></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -251,19 +240,6 @@
 	 * The jQuery $(document).ready() block.
 	 */
 	$(function() {
-
-		// Parse URL Queries
-		function url_query( query ) {
-			query = query.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-			var expr = "[\\?&]"+query+"=([^&#]*)";
-			var regex = new RegExp( expr );
-			var results = regex.exec( window.location.href );
-			if ( results !== null ) {
-				return results[1];
-			} else {
-				return false;
-			}
-		};
 
 		//BODY CLICK EVENTS
 		$("body").click(function(event) {
@@ -285,7 +261,7 @@
 		});
 
 		//check nieuwe afspraak
-		var nieuwe_afspraak = url_query("todo");
+		var nieuwe_afspraak = TOOLS.url_query("todo");
 		if (nieuwe_afspraak) {
 			var el = $("#nieuwe_afspraak");
 			$(el).removeClass("hidden");
