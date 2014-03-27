@@ -50,7 +50,7 @@
 						<div id="graphs" class="left">
 							<div data-divID="0" class="graphDiv">
 								<div class="toolbar">
-									<img src="/resources/images/zoom_in_16.png" class="magnify pointer" /><span class="graphTitle">Grafiek1</span>
+									<i class="fa fa-search-plus fa-lg magnify pointer"></i><span class="graphTitle">Grafiek1</span>
 								</div>
 								<div id="graph0" class="graph loading"></div>
 							</div>
@@ -78,32 +78,8 @@
 
 		<script src="../js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="../js/vendor/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-//<![CDATA[
-
-(function() {
-
-	/**
-	 * The jQuery $(document).ready() block.
-	 */
-	$(function() {
-
-	});
-
-})();
-
-//]]>
-</script>
-
-<script>
-//<![CDATA[
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src='//www.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-//]]>
-</script>
+		<script type="text/javascript" src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1","packages":["corechart","table"]}]}'></script>
+		<script src="../js/dashboard.js"></script>
 
 	</body>
 </html>
