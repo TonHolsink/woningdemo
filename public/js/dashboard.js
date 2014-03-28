@@ -142,10 +142,29 @@ function() {
 		}
 	};
 
-	$(function() {
-
+	/**
+	 * Initializes the charts
+	 * @memberOf anonymous
+	 */
+	function initCharts() {
+		//Update het dashboard de eerste keer
 		updateDashboard();
-		//window.setInterval(updateDashboard, 10000);
+		//Zet een timer voor het updaten
+		window.setInterval(updateDashboard, 10000);
+	}
+
+	$(function() {
+		//BODY CLICK EVENTS
+		$("body").click(function(event) {
+			var el = $(event.target);
+
+			//GRAFIEKEN VERGROOT ICOON
+			if (el.hasClass("magnify")) {
+
+			}
+		});
+
+		google.setOnLoadCallback(initCharts);
 	});
 
 })();
