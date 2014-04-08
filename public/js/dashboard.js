@@ -137,6 +137,12 @@ function() {
 	 * @memberOf anonymous
 	 */
 	function showGraph(graph) {
+		var title = graph.title + " - " + periodBtns[graph.period];
+		var divid = graph.divid;
+
+		//Zet de titel
+		$("#" + divid).parent("div").find(".graphTitle").text(title);
+
 		var today = new Date();
 		var factor = (graph.period == 2) ? 30 : (graph.period == 1) ? 2 : 1;
 
@@ -156,7 +162,7 @@ function() {
 		};
 
 		var options = {
-			title: graph.title,
+			title: title,
 			chartArea: {left: 40, top: 10, height: 140},
 			vAxis: {viewWindow: {min: 0}},
 			hAxis: {format: (graph.period == 2) ? "MMM-yyyy" : "dd-MM"},
