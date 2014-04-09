@@ -5777,8 +5777,15 @@ div.graph {
   width: 400px;
   height: 200px;
 }
+div.graphMag {
+  width: 800px;
+  height: 500px;
+}
+#yearTotalsTbl {
+  margin: 0 auto;
+}
 .loading {
-  background: url('../images/loader.gif') center center no-repeat;
+  background: url('../img/loader.gif') center center no-repeat;
 }
 .dispTable {
   display: table;
@@ -5967,3 +5974,59 @@ div.graph {
 .panelHeading > a {
   color: inherit;
 }
+#tabs li.periodTab {
+  min-width: 60px;
+}
+.toolbar button {
+  min-width: 125px;
+}
+/*bpopup*/
+.bpopup {
+  background-color: #fff;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 0 25px 5px #999;
+  color: #111;
+  display: none;
+  min-height: 250px;
+  min-width: 450px;
+  padding: 25px;
+  z-index: 9999;
+  opacity: 0;
+}
+#popupMag {
+  min-height: 870px;
+}
+.button {
+  background-color: #2b91af;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.button.small {
+  border-radius: 15px;
+  float: right;
+  margin: 22px 5px 0;
+  padding: 6px 15px;
+}
+.button:hover {
+  background-color: #1e1e1e;
+}
+.button > span {
+  font-size: 84%;
+}
+.button.b-close,
+.button.bClose {
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: none;
+  font: bold 131% sans-serif;
+  padding: 0 6px 2px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+/*end bpopup*/

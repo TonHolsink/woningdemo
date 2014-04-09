@@ -21,8 +21,9 @@ function() {
 			title: "Reparaties",
 			periods: [0,1,2],
 			period: 2,
-			divid: "graph0",
 			typ: "lijn",
+			totals: false,
+			yearTotals: false,
 			data: [
 					{
 						name: "Verwarming",
@@ -46,8 +47,9 @@ function() {
 			title: "Logins",
 			periods: [0,1,2],
 			period: 2,
-			divid: "graph1",
 			typ: "vbar",
+			totals: false,
+			yearTotals: false,
 			data: [
 					{
 						name: "Logins met ww",
@@ -71,8 +73,9 @@ function() {
 			title: "Verhuurde woningen",
 			periods: [0,1,2],
 			period: 1,
-			divid: "graph2",
 			typ: "lijn",
+			totals: false,
+			yearTotals: false,
 			data: [
 					{
 						name: "Type A",
@@ -115,18 +118,6 @@ function() {
 	function updateDashboard() {
 		var date = new Date();
 		console.log(date + "");
-
-		// $(".graph").each(function() {
-		// 	$(this).empty();
-		// });
-
-		// //Anders verversen de grafieken niet met de timer
-		// if (typeof google.visualization == "undefined") {
-		// 	google.setOnLoadCallback(fetchCharts);
-		// } else {
-		// 	fetchCharts();
-		// };
-
 		fetchCharts();
 
 	};
@@ -195,6 +186,13 @@ function() {
 			legend: {} //Moet bestaan!
 		};
 
+		//Layout aanpassingen grote versie
+		if (divid == "graphMag") {
+			options.legend.position = "bottom";
+			options.chartArea.left = "auto";
+			options.chartArea.height = "auto";
+		}
+
 		//Bepaal het type grafiek
 		var chart;
 		if (graph.typ.toUpperCase() == "HBAR") {
@@ -235,17 +233,36 @@ function() {
 	};
 
 	/**
+	 * Utility function for the period tabbar
+	 * @param {int} i The index of the graphData record
 	 * @memberOf anonymous
 	 */
-	function constructToolbar(i) {
+	function constructTabbar(i) {
 		var periods = graphData[i].periods;
-		var tbar = $("#toolbarMagTop");
-		tbar.empty();
+		var tabs = $("#tabs");
+		tabs.empty();
 		if ((periods) && (periods.length > 1)) {
-			$.each(periods, function(i, p) {
-				tbar.append("<button data-period=" + p + " class='periodBtn'>" + periodBtns[p] + "</button>");
+			$.each(periods, function(idx, p) {
+
+
+				// var klass = "class='btn-group'";
+				// if (graphData[i].period == p) {
+				// 	klass = "class='activeTab periodTab'";
+				// }
+				tabs.append("<div class='btn-group'><button  data-period='" + p + "' type='button' class='btn btn-default'>" + periodBtns[p] + "</button></div>");
 			});
 		}
+	};
+
+	/**
+	 * Initializes the magnified popup
+	 * @memberOf anonymous
+	 */
+	function initMagnify() {
+		$("#tblMagYearTot").empty();
+		$("#tblMag").empty();
+		$("#tblMagTot").empty();
+		$("#graphMag").empty();
 	};
 
 	/**
@@ -269,7 +286,25 @@ function() {
 
 			//GRAFIEKEN VERGROOT ICOON
 			if (el.hasClass("magnify")) {
+				//Welk volgnummer heeft de graphdiv???
+				var dividx = el.parents("div.graphDiv").attr("data-divID");
+				//Welk graphData index hoort daar bij
+				var idx = graphShown[dividx];
+				//Index van graphObject in array
+				var graph = graphData[idx];
+				constructTabbar(idx);
+				initMagnify();
+				var graphMag = $("#graphMag").data("data", {"graphIdx": idx, "period": graph.period});
+				$("#popupMag").bPopup({onClose: function() {
+					if (graph.period != graphMag.data("data").period) {
+						//synchroniseren graphId
+						graph.period = graphMag.data("data").period;
+						var divid = "graph" + dividx;
+						fetchGraph(graph, graph.period, divid);
 
+					};
+				}});
+				fetchGraph(graph, graph.period, "graphMag");
 			}
 		});
 
