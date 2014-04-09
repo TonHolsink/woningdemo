@@ -9,6 +9,11 @@ function() {
 	 */
 	var periodBtns = ["Week", "Maand", "Jaar"];
 	/**
+	 * The graphs shown
+	 * @memberOf anonymous
+	 */
+	var graphShown = [0, 1, 2];
+	/**
 	 * @memberOf anonymous
 	 */
 	var graphData = [
@@ -42,7 +47,7 @@ function() {
 			periods: [0,1,2],
 			period: 2,
 			divid: "graph1",
-			typ: "lijn",
+			typ: "vbar",
 			data: [
 					{
 						name: "Logins met ww",
@@ -111,34 +116,55 @@ function() {
 		var date = new Date();
 		console.log(date + "");
 
-		$(".graph").each(function() {
-			$(this).empty();
-		});
+		// $(".graph").each(function() {
+		// 	$(this).empty();
+		// });
 
-		//Anders verversen de grafieken niet met de timer
-		if (typeof google.visualization == "undefined") {
-			google.setOnLoadCallback(fetchGraphs);
-		} else {
-			fetchGraphs();
+		// //Anders verversen de grafieken niet met de timer
+		// if (typeof google.visualization == "undefined") {
+		// 	google.setOnLoadCallback(fetchCharts);
+		// } else {
+		// 	fetchCharts();
+		// };
+
+		fetchCharts();
+
+	};
+
+	/**
+	 * Iterates over graphData, and calls fetchGraph for each record
+	 * in order to display the graph.
+	 * Displays the insight chart.
+	 * @memberOf anonymous
+	 */
+	function fetchCharts() {
+		console.log("graphShown: " + graphShown)
+		for (var i = 0; i < graphShown.length; i++) {
+			var graph = graphData[graphShown[i]];
+			var divid = "graph" + i;
+			fetchGraph(graph, graph.period, divid);
 		};
+	};
 
+	/**
+	 * Fetches an individual graph through an Ajax call
+	 * If successful showGraph is called to display it
+	 * @param {object} graph A graphData record
+	 * @param {int} period The period
+	 * @param {string} divid The css id of the container
+	 * @memberOf anonymous
+	 */
+	function fetchGraph(graph, period, divid) {
+		$("#" + divid).empty();
+		showGraph(graph, period, divid);
 	};
 
 	/**
 	 * @memberOf anonymous
 	 */
-	function fetchGraphs() {
-		$.each(graphData, function(i, g) {
-			showGraph(g);
-		});
-	};
-
-	/**
-	 * @memberOf anonymous
-	 */
-	function showGraph(graph) {
-		var title = graph.title + " - " + periodBtns[graph.period];
-		var divid = graph.divid;
+	function showGraph(graph, period, divid) {
+		var title = graph.title + " - " + periodBtns[period];
+		// var divid = "graph" + dividx;
 
 		//Zet de titel
 		$("#" + divid).parent("div").find(".graphTitle").text(title);
@@ -169,30 +195,43 @@ function() {
 			legend: {} //Moet bestaan!
 		};
 
-		var chart = new google.visualization.LineChart(document.getElementById(graph.divid));
+		//Bepaal het type grafiek
+		var chart;
+		if (graph.typ.toUpperCase() == "HBAR") {
+			chart = new google.visualization.BarChart(document.getElementById(divid));
+		} else if (graph.typ.toUpperCase() == "VBAR") {
+			chart = new google.visualization.ColumnChart(document.getElementById(divid));
+		} else if (graph.typ.toUpperCase() == "PIE") {
+			chart = new google.visualization.PieChart(document.getElementById(divid));
+		} else {
+			chart = new google.visualization.LineChart(document.getElementById(divid));
+		}
 		chart.draw(d, options);
 
 	};
 
-	function showGraphWorking(graph, nr) {
-		var today = new Date();
-		var d = new google.visualization.DataTable();
-		d.addColumn('date', "Datum");
-		$.each(graph.data, function(i, data) {
-			d.addColumn('number', data.name);
-			$.each(data.points[graph.period], function(ofs, value) {
-				d.addRow([new Date(today.getFullYear(), today.getMonth(), today.getDate() - ofs), value]);
+	/**
+	 * Initializes the graph selects and binds the change event
+	 * to show the selected graph
+	 * @memberOf anonymous
+	 */
+	function initGraphSelects() {
+		$(".graphSelect").each(function(dividx, sel) {
+			$.each(graphData, function(i, graph) {
+				$(sel).append(new Option(graph.title, i));
 			});
+
+			$(sel).val(graphShown[dividx]);
+
+			$(sel).change(function(event) {
+				var i = this.selectedIndex;
+				var graph = graphData[i];
+				var divid = "graph" + dividx;
+				//TODO: SHOW SPINNER??????????????????????????????
+				fetchGraph(graph, graph.period, divid);
+				graphShown[dividx] = i;
+			})
 		});
-
-		var options = {
-			title: 'Company Performance',
-			hAxis: {format: "dd-MM"}
-		};
-
-		var chart = new google.visualization.LineChart(document.getElementById('graph0'));
-		chart.draw(d, options);
-
 	};
 
 	/**
@@ -214,6 +253,9 @@ function() {
 	 * @memberOf anonymous
 	 */
 	function initCharts() {
+		//Initialize the graph selects
+		initGraphSelects();
+
 		//Update het dashboard de eerste keer
 		updateDashboard();
 		//Zet een timer voor het updaten
