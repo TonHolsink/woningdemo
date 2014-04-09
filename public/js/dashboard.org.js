@@ -161,7 +161,7 @@ function() {
 		$("#" + divid).parent("div").find(".graphTitle").text(title);
 
 		var today = new Date();
-		var factor = (period == 2) ? 30 : (period == 1) ? 2 : 1;
+		var factor = (graph.period == 2) ? 30 : (graph.period == 1) ? 2 : 1;
 
 		var d = new google.visualization.DataTable();
 		d.addColumn('date', "Datum");
@@ -169,11 +169,11 @@ function() {
 			d.addColumn('number', data.name);
 		});
 
-		for (var i = 0; i < graph.data[0].points[period].length; i++) {
+		for (var i = 0; i < graph.data[0].points[graph.period].length; i++) {
 			var x = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i * factor);
 			var a = [x];
 			$.each(graph.data, function(j, data) {
-				a.push(data.points[period][i]);
+				a.push(data.points[graph.period][i]);
 			});
 			d.addRow(a);
 		};
@@ -182,7 +182,7 @@ function() {
 			title: title,
 			chartArea: {left: 40, top: 10, height: 140},
 			vAxis: {viewWindow: {min: 0}},
-			hAxis: {format: (period == 2) ? "MMM-yyyy" : "dd-MM"},
+			hAxis: {format: (graph.period == 2) ? "MMM-yyyy" : "dd-MM"},
 			legend: {} //Moet bestaan!
 		};
 
@@ -206,33 +206,6 @@ function() {
 		}
 		chart.draw(d, options);
 
-		//In de grote versie kunnen eventueel ook de jaartotalen en de totalen worden weergegeven
-		if (divid == "graphMag") {
-			// //Jaartotalen
-			// if (graph.yearTotals) {
-			// 	$("#tblMagYearTot").empty().append(json.yeartotals);
-			// }
-			var table = new google.visualization.Table(document.getElementById('tblMag'));
-			var opts = {showRowNumber: true, width: "100%"};
-			//Hack omdat anders het popup venster raar doet
-			if (d.getNumberOfRows() > 10) {
-				opts.height = "240px";
-			}
-			table.draw(d, opts);
-
-			//Koppelen selectie tabel en grafiek
-			google.visualization.events.addListener(table, 'select', function() {
-				chart.setSelection(table.getSelection());
-			});
-
-			//Totalen
-			// if (graph.totals) {
-			// 	var dataTot = new google.visualization.DataTable(json.totals);
-			// 	var tableTot = new google.visualization.Table(document.getElementById('tblMagTot'));
-			// 	tableTot.draw(dataTot, {sort: "disable"});
-			// }
-		}
-
 	};
 
 	/**
@@ -255,7 +228,7 @@ function() {
 				//TODO: SHOW SPINNER??????????????????????????????
 				fetchGraph(graph, graph.period, divid);
 				graphShown[dividx] = i;
-			});
+			})
 		});
 	};
 
@@ -270,11 +243,13 @@ function() {
 		tabs.empty();
 		if ((periods) && (periods.length > 1)) {
 			$.each(periods, function(idx, p) {
-				var klass = "";
-				if (graphData[i].period == p) {
-					klass = " class='active'";
-				}
-				tabs.append("<li data-period='" + p + "'" + klass + "><a href='javascript:' class='periodTab'>" + periodBtns[p] + "</a></li>");
+
+
+				// var klass = "class='btn-group'";
+				// if (graphData[i].period == p) {
+				// 	klass = "class='activeTab periodTab'";
+				// }
+				tabs.append("<div class='btn-group'><button  data-period='" + p + "' type='button' class='btn btn-default'>" + periodBtns[p] + "</button></div>");
 			});
 		}
 	};
@@ -330,25 +305,6 @@ function() {
 					};
 				}});
 				fetchGraph(graph, graph.period, "graphMag");
-			//GRAFIEKEN POPUP PERIODE BUTTONS
-			} else if (el.hasClass("periodTab")) {
-				var li = $(el).parent();
-				if (!li.hasClass('active')) {
-					var period = li.attr("data-period");
-					if (period) {
-						$(".periodTab").each(function(idx, anchor) {
-							$(anchor).parent().removeClass("active");
-						});
-						li.addClass("active");
-
-						var graphMag = $("#graphMag");
-						initMagnify();
-						var idx = graphMag.data("data").graphIdx;
-						var graph = graphData[idx];
-						graphMag.data("data").period = period;
-						fetchGraph(graph, period, "graphMag");
-					}
-				}
 			}
 		});
 
