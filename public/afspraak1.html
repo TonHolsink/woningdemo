@@ -150,8 +150,8 @@
 								<strong>Aanvullende informatie:</strong><br/>
 								<textarea class="form-control" rows="5"></textarea>
 							</div>
-							<div class="panel-footer">
-								<button id="submit_button" type="button">Versturen</button>
+							<div id="verstuur" class="panel-footer">
+								<button id="submit_button" class="btn btn-default" type="button">Versturen</button>
 							</div>
 						</div>
 
@@ -224,6 +224,7 @@
 						break;
 				}
 			});
+			$('#verstuur').show();
 		}
 	};
 
@@ -264,6 +265,7 @@
 	$("body").click(function(event) {
 		var el = $(event.target);
 		if (el.attr("id") == "submit_button") {
+			$('#verstuur').hide();
 			var panel = $("#beschikbare_tijdstippen");
 			panel.removeClass("hidden");
 			scrollIntoView(panel);
