@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body class="with-navbar-top">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><img class="logo" src="img/mijnwoonwaard.png" /></a>
+			</div> <!-- .navbar-header -->
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#about">Over</a></li>
+				<li><a href="#contact">Contact</a></li>
+				</ul>
+				<div class="navbar-right status">
+					Ingelogd als: Bas de Jong
+				</div>
+			</div><!-- .navbar-collapse -->
+			</div> <!-- .container -->
+		</div> <!-- .navbar -->
+
+		<div class="main-intro"> </div>
+		<div class="container">
+			<div class="main-content">
+				<div class="content-area">
+<!--
+					<ul class="nav nav-pills nav-justified">
+						<li class="active"><a>Afspraak 1</a></li>
+						<li><a>Afspraak 2<i class="fa fa-forward pull-right"></i></a></li>
+						<li><a href="#">Afspraak 3</a></li>
+					</ul>
+-->
+					<h1>Aanvragen sleutels</h1>
+					<p>
+						Op deze pagina kunt u nieuwe sleutels bestellen.<br/><br/>
+						U vult uw aanvraag hieronder in. Vervolgens betaalt u online via iDEAL.<br/>
+						Als uw betaling is voltooid, kunt u aangeven wanneer u de sleutels wilt afhalen.
+					</p>
+
+					<form id="form" action="sleutel2.html">
+						<div class="question-panel panel panel-default">
+							<div class="panel-heading"><strong>Waarvoor wilt u een sleutel aanvragen?</strong></div>
+							<div class="panel-body">
+								<select class="forminput">
+									<option value="0">Maak uw keuze</option>
+									<option>Voordeur</option>
+									<option>Achterdeur</option>
+									<option>Garagedeur</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default hidden">
+							<div class="panel-heading"><strong>Hoeveel sleutels wilt u aanvragen?</strong></div>
+							<div class="panel-body">
+								<select class="forminput">
+									<option value="0">--</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="question-panel panel panel-default hidden">
+							<div class="panel-heading"><strong>Uw lokatie</strong></div>
+							<div class="panel-body">
+							<div class="form-table-bordered">
+								<div class="form-row">
+									<div class="label-col"><strong>Naam:</strong></div>
+									<div class="input-col">B.P. de Jong</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Adres:</strong></div>
+									<div class="input-col">Harselaarseweg 22</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Postcode:</strong></div>
+									<div class="input-col">3771 MB</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Plaats:</strong></div>
+									<div class="input-col">Barneveld</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>Telefoonnummer:</strong></div>
+									<div class="input-col">0342 440439</div>
+								</div>
+								<div class="form-row">
+									<div class="label-col"><strong>E-mailadres:</strong></div>
+									<div class="input-col">bas.dejong@yourrequest.nl</div>
+								</div>
+								<strong>Aanvullende informatie:</strong><br/>
+								<textarea class="form-control" rows="5"></textarea>
+							</div>
+							<div id="betaal" class="panel-footer">
+								<button id="submit_button" type="button">Betalen</button><img src="img/ideal-klein.gif">
+							</div>
+						</div>
+
+						<div id="beschikbare_tijdstippen" class="question-panel panel panel-default hidden">
+							<div class="panel-heading"><strong><span class="text-success">Uw betaling is gelukt!</span></strong></div>
+							<div class="panel-body">
+								U kunt op de volgende tijdstippen uw sleutel(s) afhalen.<br/><br/>
+
+								<div class="list-group tijdstippen">
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Maandag 24 maart</h4>
+										<p class="list-group-item-text">10 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Dinsdag 25 maart</h4>
+										<p class="list-group-item-text">19 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Donderdag 27 maart</h4>
+										<p class="list-group-item-text">10 uur</p>
+									</a>
+									<a class="list-group-item pointer">
+										<h4 class="list-group-item-heading">Ik kan niet op deze momenten.</h4>
+										<p class="list-group-item-text">Geef me andere opties.</p>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</form>
+
+				</div> <!-- .content-area -->
+			</div> <!-- .main-content -->
+		</div> <!-- .container -->
+
+		<div class="container">
+			<div class="footer">
+				<hr>
+				<footer>
+					<p>&copy; YourRequest 2014</p>
+				</footer>
+			</div> <!-- footer -->
+		</div> <!-- container -->
+
+
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function() {
+
+	function getTypeOfInput(el) {
+		return el.type || el.tagName.toLowerCase();
+	};
+
+	function resetAllInputsInPanel(panel) {
+		if (panel) {
+			var inputs = panel.find(".forminput");
+			inputs.each(function(i, item) {
+				var type = getTypeOfInput(item);
+				switch(type) {
+					case 'radio':
+						$(item).attr("checked", false);
+						break;
+					case 'select-one':
+						$(item).val("0");
+						break;
+				}
+			});
+			$('#betaal').show();
+		}
+	};
+
+	function scrollIntoView(el) {
+		$('html, body').animate({
+			//Beetje gokken (-50 compenseert voor menubar)
+			scrollTop: el.offset().top - 50
+		}, 1000);
+	};
+
+	function hideNextQuestions(input) {
+		var panel = $(input).closest(".question-panel")[0];
+		if (panel){
+			var nextQuestionPanels = $(panel).nextAll();
+			if (nextQuestionPanels) {
+				nextQuestionPanels.each(function(i, item) {
+					$(item).addClass("hidden");
+				});
+
+				//Als je bij een select "Maak uw keuze" kiest, dan alle vervolgvragen niet tonen
+				if ((getTypeOfInput(input) == "select-one") && ($(input).val() == "0")) return;
+
+				//Toon alleen de eerste vervolgvraag
+				var questionPanel = $(nextQuestionPanels[0]);
+				resetAllInputsInPanel(questionPanel);
+				questionPanel.removeClass("hidden");
+				scrollIntoView(questionPanel);
+			}
+		}
+	};
+
+	// function hideNextQuestions(input) { };
+
+	/**
+	 * The jQuery $(document).ready() block.
+	 */
+
+	$("body").click(function(event) {
+		var el = $(event.target);
+		if (el.attr("id") == "submit_button") {
+			$('#betaal').hide();
+			var panel = $("#beschikbare_tijdstippen");
+			panel.removeClass("hidden");
+			scrollIntoView(panel);
+
+		} else if (el.parents(".tijdstippen").length) {
+			$("#form").submit();
+		}
+	});
+
+	$(function() {
+		$(".forminput").each(function(i, input) {
+			$(input).change(function(event) {
+				hideNextQuestions(input);
+			});
+		});
+	});
+
+})();
+
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src='//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+//]]>
+</script>
+
+	</body>
+</html>
