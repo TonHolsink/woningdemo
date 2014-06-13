@@ -30,7 +30,7 @@
 				</div> <!-- .navbar-header -->
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-					<li class="active"><a href="o-index.html">Home</a></li>
+					<li><a href="o-index.html">Home</a></li>
 					<li><a href="#profiel">Mijn Profiel</a></li>
 					<li><a href="o-dashboard.html">Dashboard</a></li>
 					<li><a href="#faq">Faq</a></li>
@@ -48,63 +48,55 @@
 				<div class="content-area">
 					<div class="six-six">
 						<div class="left">
-							<div>
-								<h2>Inbox</h2>
-								<div class="panel panel-default">
-									<table class="table table-condensed table-striped table-hover">
-										<thead>
-											<tr>
-												<th>Onderwerp</th><th>Van</th><th>Datum</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
-											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
-											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
-											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
-											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
+							<h2>Persoonsgegevens</h2>
+							<div class="list-group">
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Klantnummer</h4>
+									<p class="list-group-item-text">201412345</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Naam</h4>
+									<p class="list-group-item-text">Dhr. P. Persoon</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Adres</h4>
+									<p class="list-group-item-text">Harselaarseweg 22 3771 MB Barneveld</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Telefoon</h4>
+									<p class="list-group-item-text">0342440439</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">E-mail</h4>
+									<p class="list-group-item-text">persoon@yourrequest.nl</p>
+								</span>
+							</div> <!-- .list-group -->
+							<h2>Contacthistorie</h2>
 						</div> <!-- .left -->
 						<div class="right">
-							<div>
-								<h2>Telefoonkanaal</h2>
-								<div class="list-group">
-									<span class="list-group-item">
-										<h4 class="list-group-item-heading">Aantal in de wacht: <span class="label label-info">4</span></h4>
-									</span>
-									<span class="list-group-item">
-										<button type="button" id="phone" class="btn btn-primary btn-lg btn-block"><i class="fa fa-phone fa-5x"></i></button>
-									</span>
-								</div> <!-- .list-group -->
-							</div>
+							<h2>Woninggegevens</h2>
+							<div class="list-group">
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Type</h4>
+									<p class="list-group-item-text">Eengezinswoning</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Adres</h4>
+									<p class="list-group-item-text">Harselaarseweg 22 3771 MB Barneveld</p>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Huurovereenkomst</h4>
+									<a href="doc/huurovereenkomst.pdf" target="_blank"><img src="img/pdf-icon.gif"></a>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Verwarmingsketel</h4>
+									<a href="doc/ketel.pdf" target="_blank"><img src="img/pdf-icon.gif"></a>
+								</span>
+							</div> <!-- .list-group -->
+							<h2>Financi&euml;le gegevens</h2>
+
 						</div> <!-- .right -->
 					</div> <!-- .six-six -->
-					<div class="twelve">
-						<h2>Reparatieverzoeken</h2>
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div class="input-group">
-									<input type="search" class="form-control" id="zoekTerm" placeholder="Geef zoekterm">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button"><i class="fa fa-search fa-lg"></i></button>
-									</span>
-								</div><!-- /input-group -->
-							</div>
-						</div>
-					</div> <!-- .twelve -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
@@ -131,7 +123,7 @@
 	 * The jQuery $(document).ready() block.
 	 */
 	$(function() {
-		$('#phone').click(function() {location.href="o-klant.html";});
+
 	});
 
 })();
