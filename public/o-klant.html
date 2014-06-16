@@ -96,65 +96,65 @@
 					</div> <!-- .six-six -->
 					<div class="twelve">
 						<h2>Contacthistorie</h2>
-						<div class="row panel panel-default no-margin-leftright">
+						<div id="contactHist" class="row panel panel-default no-margin-leftright">
 							<div class="col-md-4 no-padding-leftright">
 								<div class="btn-toolbar my-toolbar" role="toolbar">
 									<div class="btn-group">
-										<select>
+										<select id="contactType">
 											<option>Alles</option>
 											<option>Email</option>
 											<option>Telefoon</option>
 										</select>
-										<select>
+										<select class="hidden">
 											<option>Beide</option>
 											<option>In</option>
 											<option>Uit</option>
 										</select>
 									</div>
 								</div>
-								<div id="contactHistList" class="list-group no-margin-bottom">
-									<a class="list-group-item pointer active">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> Medewerker1 <span class="pull-right">21-06-2014 14:00</span></div>
-										<p class="list-group-item-text">Onderwerp telefoongesprek...</p>
+								<div id="contactHistList" class="list-group no-margin-bottom scroll-y">
+									<a class="list-group-item pointer active" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">21-06-2014 14:00</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
 									</a>
-									<a class="list-group-item pointer">
-										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> Medewerker2 <span class="pull-right">19-06-2014 13:30</span></div>
-										<p class="list-group-item-text">Onderwerp email...</p>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker2</span> <span class="pull-right field">19-06-2014 13:30</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
 									</a>
-									<a class="list-group-item pointer">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> Medewerker1 <span class="pull-right">19-06-2014 09:20</span></div>
-										<p class="list-group-item-text">Onderwerp telefoongesprek...</p>
+									<a class="list-group-item pointer" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">19-06-2014 09:20</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
 									</a>
-									<a class="list-group-item pointer">
-										<div class="list-group-item-heading"><i class="fa  fa-envelope-o"></i> Medewerker3 <span class="pull-right">01-05-2014 12:30</span></div>
-										<p class="list-group-item-text">Onderwerp email...</p>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker3</span> <span class="pull-right field">01-05-2014 12:30</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
 									</a>
-									<a class="list-group-item pointer">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> Medewerker4 <span class="pull-right">12-04-2014 15:00</span></div>
-										<p class="list-group-item-text">Onderwerp telefoongesprek...</p>
+									<a class="list-group-item pointer" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker4</span> <span class="pull-right field">12-04-2014 15:00</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
 									</a>
-									<a class="list-group-item pointer">
-										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> Medewerker1 <span class="pull-right">11-04-2014 16:15</span></div>
-										<p class="list-group-item-text">Onderwerp email...</p>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker1</span> <span class="pull-right field">11-04-2014 16:15</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
 									</a>
 								</div>
 							</div>
 							<div class="col-md-8 no-padding-leftright">
 								<div class="btn-toolbar my-toolbar" role="toolbar"></div>
-								<div id="contactHistDetail" class="padding-leftright">
-									<h4>Onderwerp telefoongesprek...</h4>
-									<table class="table">
+								<div id="contactHistDetail" class="padding-leftright padding-bottom scroll-y">
+									<h4><i class="fa fa-phone"></i> <span class="field">Onderwerp telefoongesprek...</span></h4>
+									<table class="table table-condensed">
 										<tr>
-											<td><b>tijdstip:</b></td><td>21-06-2014 14:00:00</td>
+											<td><b>tijdstip:</b></td><td class="field">21-06-2014 14:00:00</td>
 										</tr>
 										<tr>
-											<td><b>door:</b></td><td>Medewerker1</td>
+											<td><b>door:</b></td><td class="field">Medewerker1</td>
 										</tr>
 										<tr>
 											<td><b>met:</b></td><td>Klant1</td>
 										</tr>
 										<tr>
-											<td colspan="2"><a href="#"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
+											<td colspan="2"><a href="javascript:;"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
 										</tr>
 									</table>
 									Hieronder volgen de aantekeningen:<br/>
@@ -172,6 +172,53 @@
 					</div> <!-- .twelve -->
 					<div class="twelve">
 						<h2>Financi&euml;le gegevens</h2>
+							<div class="list-group">
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Openstaande rekeningen</h4>
+									<div class="list-group-item-text">
+									<table class="table table-condensed">
+										<thead>
+											<tr>
+												<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>31-07-2014</td><td>450,75</td><td>huur augustus 2014</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Betaalachterstand</h4>
+									<div class="list-group-item-text">
+									<table class="table table-condensed">
+										<thead>
+											<tr>
+												<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>30-06-2014</td><td>450,75</td><td>huur juli 2014</td>
+											</tr>
+											<tr>
+												<td>30-06-2014</td><td>149,15</td><td>afrekening servicekosten</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Afspraken tot aflossing</h4>
+									<div class="list-group-item-text">Afspraken tot aflossing</div>
+								</span>
+								<span class="list-group-item">
+									<h4 class="list-group-item-heading">Huidige te betalen maandelijkse bedragen</h4>
+									<div class="list-group-item-text">(huur, vaste lasten etc)</div>
+								</span>
+							</div> <!-- .list-group -->
 					</div> <!-- .twelve -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
@@ -205,7 +252,33 @@
 				$(s).removeClass('active');
 			});
 			el.addClass('active');
-			alert(el.text().trim());
+			var flds1 = el.find('.field');
+			var flds2 = $('#contactHistDetail .field');
+			$(flds2[0]).text($(flds1[2]).text());
+			$(flds2[1]).text($(flds1[1]).text());
+			$(flds2[2]).text($(flds1[0]).text());
+			flds1 = el.find('i').clone();
+			flds2 = $('#contactHistDetail i');
+			$(flds2).replaceWith(flds1);
+		});
+
+		$('#contactType').change(function(event) {
+			var ctyp = "all";
+			var sIdx = $('#contactType').prop('selectedIndex');
+			if (sIdx == 1) {
+				ctyp = "email";
+			} else if (sIdx == 2) {
+				ctyp = "phone";
+			}
+			$('#contactHistList .list-group-item').each(function(i, s) {
+				if ($(s).attr('data-type') == ctyp || ctyp == 'all') {
+					$(s).show();
+				} else {
+					$(s).hide();
+				}
+			});
+
+			$('#contactHistList .list-group-item:visible:first').trigger('click');
 		});
 	});
 
