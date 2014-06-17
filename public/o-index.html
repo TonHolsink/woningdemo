@@ -51,31 +51,54 @@
 							<div>
 								<h2>Inbox</h2>
 								<div class="panel panel-default">
-									<table class="table table-condensed table-striped table-hover">
+									<table class="table table-condensed table-striped table-hover table-">
 										<thead>
 											<tr>
 												<th>Onderwerp</th><th>Van</th><th>Datum</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
+										<tbody id="inboxTbl">
+											<tr class="pointer">
+												<td>Lekkage badkamer</td><td>a.jansen@site1.nl</td><td>01-07-2014 14:20</td>
 											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
+											<tr class="pointer">
+												<td>Onderhoud cv-installatie</td><td>p.klaasen@site2.nl</td><td>01-07-2014 13:45</td>
 											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
+											<tr class="pointer">
+												<td>Betalingsregeling</td><td>g.pietersen@site3.nl</td><td>01-07-2014 13:10</td>
 											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
+											<tr class="pointer">
+												<td>Geluidsoverlast buren</td><td>f.vanvoorden@site4.nl</td><td>01-07-2014 10:20</td>
 											</tr>
-											<tr>
-												<td>Onderwerp1</td><td>Persoon1@site1.nl</td><td>01-07-2014 09:20</td>
+											<tr class="pointer">
+												<td>Verstopping afvoer</td><td>j.dewaard@site5.nl</td><td>01-07-2014 09:40</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+								<!--EMAIL POPUP ##################################################################################################-->
+								<div id="popupEmail" class="bpopup">
+									<span class="button b-close"><span>&times;</span></span>
+									<table class="table table-condensed">
+										<tr>
+											<td><b>Onderwerp:</b></td><td class="field"></td>
+										</tr>
+										<tr>
+											<td><b>Van:</b></td><td class="field"></td>
+										</tr>
+										<tr>
+											<td><b>Datum:</b></td><td class="field"></td>
+										</tr>
+									</table>
+									Geachte mijnheer, mevrouw
+									<p>
+										Deze e-mail betreft...<br/>
+										...<br/>
+										...<br/>
+										Met vriendelijke groet,<br/>
+										...
+									</p>
+								</div><!-- popupEmail -->
 							</div>
 						</div> <!-- .left -->
 						<div class="right">
@@ -127,6 +150,25 @@
 										</tr>
 									</tbody>
 								</table>
+								<!--REPARATIEVERZOEKEN POPUP ##################################################################################################-->
+								<div id="popupRepVerzoek" class="bpopup">
+									<span class="button b-close"><span>&times;</span></span>
+									<table class="table table-condensed">
+										<tr>
+											<td><b>Naam:</b></td><td class="field"></td>
+										</tr>
+										<tr>
+											<td><b>Adres:</b></td><td class="field"></td>
+										</tr>
+										<tr>
+											<td><b>Omschrijving:</b></td><td class="field"></td>
+										</tr>
+									</table>
+									Details reparatieverzoek...<br/>
+									...<br/>
+									...<br/>
+									...
+								</div><!-- popupRepVerzoek -->
 
 							</div>
 						</div>
@@ -144,9 +186,9 @@
 			</div> <!-- footer -->
 		</div> <!-- container -->
 
-
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/jquery.bpopup.min.js"></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -157,6 +199,18 @@
 	 * The jQuery $(document).ready() block.
 	 */
 	$(function() {
+		//Inbox
+		$('#inboxTbl').click(function(event) {
+			var el = $(event.target).closest('tr');
+			var flds1 = $(el).find('td');
+			var flds2 = $('#popupEmail .field');
+			$(flds2[0]).text($(flds1[0]).text());
+			$(flds2[1]).text($(flds1[1]).text());
+			$(flds2[2]).text($(flds1[2]).text());
+			$("#popupEmail").bPopup();
+		});
+
+		//Telefoonkanaal
 		$('#phone').click(function() {location.href="o-klant.html";});
 
 		//Reparatieverzoeken
@@ -184,6 +238,16 @@
 				$('#noResult').show();
 				$('#repZoekResult .pointer').hide();
 			}
+		});
+
+		$('#repZoekResult .pointer').click(function(event) {
+			var el = $(event.target).closest('tr');
+			var flds1 = $(el).find('td');
+			var flds2 = $('#popupRepVerzoek .field');
+			$(flds2[0]).text($(flds1[0]).text());
+			$(flds2[1]).text($(flds1[1]).text());
+			$(flds2[2]).text($(flds1[2]).text());
+			$("#popupRepVerzoek").bPopup();
 		});
 
 	});
