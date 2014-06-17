@@ -99,9 +99,35 @@
 								<div class="input-group">
 									<input type="search" class="form-control" id="zoekTerm" placeholder="Geef zoekterm">
 									<span class="input-group-btn">
-										<button class="btn btn-default" type="button"><i class="fa fa-search fa-lg"></i></button>
+										<button id="zoekBtn" class="btn btn-default" type="button"><i class="fa fa-search fa-lg"></i></button>
 									</span>
 								</div><!-- /input-group -->
+
+								<table id="repZoekResult" class="table table-condensed table-striped table-hover">
+									<thead>
+										<tr>
+											<th>Naam</th><th>Adres</th><th>Omschrijving</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr id="noResult">
+											<td colspan="1000">Geen resultaten gevonden</td>
+										</tr>
+										<tr class="pointer">
+											<td>Dhr. A. Janssen</td><td>Harselaarseweg 22 3771 MB Barneveld</td><td>Onderhoud cv-installatie</td>
+										</tr>
+										<tr class="pointer">
+											<td>Mw. P. Klaassen</td><td>Industrieweg 2A 3771 MC Barneveld</td><td>Reparatie dakgoot</td>
+										</tr>
+										<tr class="pointer">
+											<td>Mw. G. Pietersen</td><td>Baron van Nagelstraat 5 3771 MF Barneveld</td><td>Schilderwerk kozijnen</td>
+										</tr>
+										<tr class="pointer">
+											<td>Dhr. K. van Voorden</td><td>Nijverheidsweg 22 3770 MG Barneveld</td><td>Onderhoud electrische installatie</td>
+										</tr>
+									</tbody>
+								</table>
+
 							</div>
 						</div>
 					</div> <!-- .twelve -->
@@ -132,6 +158,34 @@
 	 */
 	$(function() {
 		$('#phone').click(function() {location.href="o-klant.html";});
+
+		//Reparatieverzoeken
+		$('#repZoekResult .pointer').hide();
+		$("#zoekTerm").keyup(function(event){
+			if(event.keyCode == 13){
+				$("#zoekBtn").trigger('click');
+			}
+		});
+		$('#zoekBtn').click(function() {
+			var zoekTerm = $('#zoekTerm').val().trim();
+			if (zoekTerm.length > 0) {
+				var s = '#repZoekResult .pointer:contains("' + zoekTerm + '")';
+				var result = $(s);
+				if (result.length > 0) {
+					$('#noResult').hide();
+					$('#repZoekResult .pointer').hide();
+					result.show();
+				} else {
+					$('#noResult').show();
+					$('#repZoekResult .pointer').hide();
+				}
+			} else {
+				$('#zoekTerm').val("");
+				$('#noResult').show();
+				$('#repZoekResult .pointer').hide();
+			}
+		});
+
 	});
 
 })();
