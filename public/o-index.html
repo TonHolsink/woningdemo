@@ -189,6 +189,7 @@
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/vendor/jquery.bpopup.min.js"></script>
+		<script src="js/jquery-ext.js"></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -199,6 +200,7 @@
 	 * The jQuery $(document).ready() block.
 	 */
 	$(function() {
+
 		//Inbox
 		$('#inboxTbl').click(function(event) {
 			var el = $(event.target).closest('tr');
@@ -210,7 +212,7 @@
 			$("#popupEmail").bPopup();
 		});
 
-		//Telefoonkanaal
+		//TelefoonkaCaal
 		$('#phone').click(function() {location.href="o-klant.html";});
 
 		//Reparatieverzoeken
@@ -223,7 +225,7 @@
 		$('#zoekBtn').click(function() {
 			var zoekTerm = $('#zoekTerm').val().trim();
 			if (zoekTerm.length > 0) {
-				var s = '#repZoekResult .pointer:contains("' + zoekTerm + '")';
+				var s = '#repZoekResult .pointer:ContainsCaseInsensitive("' + zoekTerm + '")';
 				var result = $(s);
 				if (result.length > 0) {
 					$('#noResult').hide();
@@ -241,8 +243,7 @@
 		});
 
 		$('#repZoekResult .pointer').click(function(event) {
-			var el = $(event.target).closest('tr');
-			var flds1 = $(el).find('td');
+			var flds1 = $(this).find('td');
 			var flds2 = $('#popupRepVerzoek .field');
 			$(flds2[0]).text($(flds1[0]).text());
 			$(flds2[1]).text($(flds1[1]).text());

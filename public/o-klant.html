@@ -263,7 +263,7 @@
 	 */
 	$(function() {
 		$('#contactHistList .list-group-item').click(function(event) {
-			var el = $(event.target).closest('a');
+			var el = $(this);
 			el.siblings().each(function(i, s) {
 				$(s).removeClass('active');
 			});
@@ -276,6 +276,7 @@
 			flds1 = el.find('i').clone();
 			flds2 = $('#contactHistDetail i');
 			$(flds2).replaceWith(flds1);
+			$('#contactHistDetail').scrollTop(0);
 		});
 
 		$('#contactType').change(function(event) {
@@ -295,6 +296,7 @@
 			});
 
 			$('#contactHistList .list-group-item:visible:first').trigger('click');
+			$('#contactHistDetail').scrollTop(0);
 		});
 	});
 
