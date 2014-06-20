@@ -203,12 +203,12 @@
 
 		//Inbox
 		$('#inboxTbl').click(function(event) {
-			var el = $(event.target).closest('tr');
-			var flds1 = $(el).find('td');
-			var flds2 = $('#popupEmail .field');
-			$(flds2[0]).text($(flds1[0]).text());
-			$(flds2[1]).text($(flds1[1]).text());
-			$(flds2[2]).text($(flds1[2]).text());
+			var $el = $(event.target).closest('tr');
+			var $flds1 = $el.find('td');
+			var $flds2 = $('#popupEmail .field');
+			$flds2.eq(0).text($flds1.eq(0).text());
+			$flds2.eq(1).text($flds1.eq(1).text());
+			$flds2.eq(2).text($flds1.eq(2).text());
 			$("#popupEmail").bPopup();
 		});
 
@@ -243,11 +243,11 @@
 		});
 
 		$('#repZoekResult .pointer').click(function(event) {
-			var flds1 = $(this).find('td');
-			var flds2 = $('#popupRepVerzoek .field');
-			$(flds2[0]).text($(flds1[0]).text());
-			$(flds2[1]).text($(flds1[1]).text());
-			$(flds2[2]).text($(flds1[2]).text());
+			var $flds1 = $(this).find('td');
+			var $flds2 = $('#popupRepVerzoek .field');
+			$flds2.eq(0).text($flds1.eq(0).text());
+			$flds2.eq(1).text($flds1.eq(1).text());
+			$flds2.eq(2).text($flds1.eq(2).text());
 			$("#popupRepVerzoek").bPopup();
 		});
 
