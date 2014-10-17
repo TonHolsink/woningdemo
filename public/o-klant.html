@@ -84,110 +84,94 @@
 											<td><strong>Adres</strong></td><td>Harselaarseweg 22 3771 MB Barneveld</td>
 										</tr>
 										<tr>
-											<td><strong>Huurovereenkomst</strong></td><td><a href="doc/huurovereenkomst.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+											<td><strong>Huurovereenkomst</strong></td><td><a href="doc/huurovereenkomst.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-lg"></i></a></td>
 										</tr>
 										<tr>
-											<td><strong>Verwarmingsketel</strong></td><td><a href="doc/ketel.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+											<td><strong>Verwarmingsketel</strong></td><td><a href="doc/ketel.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-lg"></i></a></td>
 										</tr>
 									</table>
+									<div id="map_canvas" class="margin-leftright-negative margin-bottom-negative" style="height: 300px;"></div>
 								</div> <!-- .panel-body -->
 							</div> <!-- .panel -->
-							<div class="list-group">
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Type</h4>
-									<p class="list-group-item-text">Eengezinswoning</p>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Adres</h4>
-									<p class="list-group-item-text">Harselaarseweg 22 3771 MB Barneveld</p>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Huurovereenkomst</h4>
-									<a href="doc/huurovereenkomst.pdf" target="_blank"><img src="img/pdf-icon.gif"></a>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Verwarmingsketel</h4>
-									<a href="doc/ketel.pdf" target="_blank"><img src="img/pdf-icon.gif"></a>
-								</span>
-							</div> <!-- .list-group -->
-							<div id="map_canvas" style="height: 300px;"></div>
 						</div> <!-- .right -->
 					</div> <!-- .six-six -->
 					<div class="twelve">
-						<h2>Contacthistorie</h2>
-						<div id="contactHist" class="row panel panel-default no-margin-leftright">
-							<div class="col-md-4 no-padding-leftright">
-								<div class="btn-toolbar my-toolbar" role="toolbar">
-									<div class="btn-group">
-										<select id="contactType">
-											<option>Alles</option>
-											<option>Email</option>
-											<option>Telefoon</option>
-										</select>
-										<select class="hidden">
-											<option>Beide</option>
-											<option>In</option>
-											<option>Uit</option>
-										</select>
+						<div id="contactHist" class="panel panel-default">
+							<div class="panel-heading"><strong>Contacthistorie</strong></div>
+							<div class="panel-body no-padding">
+								<div class="col-md-4 no-padding-leftright">
+									<div class="btn-toolbar my-toolbar" role="toolbar">
+										<div class="btn-group">
+											<select id="contactType" class="form-control">
+												<option>Alles</option>
+												<option>Email</option>
+												<option>Telefoon</option>
+											</select>
+											<select class="hidden form-control">
+												<option>Beide</option>
+												<option>In</option>
+												<option>Uit</option>
+											</select>
+										</div>
+									</div>
+									<div id="contactHistList" class="list-group no-margin-bottom scroll-y">
+										<a class="list-group-item pointer active" data-type="phone">
+											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">21-06-2014 14:00</span></div>
+											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+										</a>
+										<a class="list-group-item pointer" data-type="email">
+											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker2</span> <span class="pull-right field">19-06-2014 13:30</span></div>
+											<p class="list-group-item-text field">Onderwerp email...</p>
+										</a>
+										<a class="list-group-item pointer" data-type="phone">
+											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">19-06-2014 09:20</span></div>
+											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+										</a>
+										<a class="list-group-item pointer" data-type="email">
+											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker3</span> <span class="pull-right field">01-05-2014 12:30</span></div>
+											<p class="list-group-item-text field">Onderwerp email...</p>
+										</a>
+										<a class="list-group-item pointer" data-type="phone">
+											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker4</span> <span class="pull-right field">12-04-2014 15:00</span></div>
+											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+										</a>
+										<a class="list-group-item pointer" data-type="email">
+											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker1</span> <span class="pull-right field">11-04-2014 16:15</span></div>
+											<p class="list-group-item-text field">Onderwerp email...</p>
+										</a>
 									</div>
 								</div>
-								<div id="contactHistList" class="list-group no-margin-bottom scroll-y">
-									<a class="list-group-item pointer active" data-type="phone">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">21-06-2014 14:00</span></div>
-										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-									</a>
-									<a class="list-group-item pointer" data-type="email">
-										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker2</span> <span class="pull-right field">19-06-2014 13:30</span></div>
-										<p class="list-group-item-text field">Onderwerp email...</p>
-									</a>
-									<a class="list-group-item pointer" data-type="phone">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">19-06-2014 09:20</span></div>
-										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-									</a>
-									<a class="list-group-item pointer" data-type="email">
-										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker3</span> <span class="pull-right field">01-05-2014 12:30</span></div>
-										<p class="list-group-item-text field">Onderwerp email...</p>
-									</a>
-									<a class="list-group-item pointer" data-type="phone">
-										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker4</span> <span class="pull-right field">12-04-2014 15:00</span></div>
-										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-									</a>
-									<a class="list-group-item pointer" data-type="email">
-										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker1</span> <span class="pull-right field">11-04-2014 16:15</span></div>
-										<p class="list-group-item-text field">Onderwerp email...</p>
-									</a>
+								<div class="col-md-8 no-padding-leftright margin-top">
+									<div class="btn-toolbar my-toolbar" role="toolbar"></div>
+									<div id="contactHistDetail" class="padding-leftright padding-bottom scroll-y table-responsive">
+										<h4><i class="fa fa-phone"></i> <span class="field">Onderwerp telefoongesprek...</span></h4>
+										<table class="table-condensed">
+											<tr>
+												<td><b>tijdstip:</b></td><td class="field">21-06-2014 14:00:00</td>
+											</tr>
+											<tr>
+												<td><b>door:</b></td><td class="field">Medewerker1</td>
+											</tr>
+											<tr>
+												<td><b>met:</b></td><td>Dhr. P. Persoon</td>
+											</tr>
+											<tr>
+												<td colspan="2"><a href="javascript:;"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
+											</tr>
+										</table>
+										Hieronder volgen de aantekeningen:<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+										...<br/>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-8 no-padding-leftright">
-								<div class="btn-toolbar my-toolbar" role="toolbar"></div>
-								<div id="contactHistDetail" class="padding-leftright padding-bottom scroll-y table-responsive">
-									<h4><i class="fa fa-phone"></i> <span class="field">Onderwerp telefoongesprek...</span></h4>
-									<table class="table table-condensed">
-										<tr>
-											<td><b>tijdstip:</b></td><td class="field">21-06-2014 14:00:00</td>
-										</tr>
-										<tr>
-											<td><b>door:</b></td><td class="field">Medewerker1</td>
-										</tr>
-										<tr>
-											<td><b>met:</b></td><td>Dhr. P. Persoon</td>
-										</tr>
-										<tr>
-											<td colspan="2"><a href="javascript:;"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
-										</tr>
-									</table>
-									Hieronder volgen de aantekeningen:<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-									...<br/>
-								</div>
-							</div>
-						</div> <!-- .row -->
+							</div> <!-- .panel-body -->
+						</div> <!-- .panel -->
 					</div> <!-- .twelve -->
 					<div class="twelve">
 						<h2>Financi&euml;le gegevens</h2>
@@ -287,7 +271,7 @@
 			center:myLatlng,
 			panControl:false,
 			rotateControl:false,
-			streetViewControl: false,
+			streetViewControl: true,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		map = new google.maps.Map(document.getElementById("map_canvas"),
