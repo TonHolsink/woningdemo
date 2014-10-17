@@ -47,12 +47,12 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-					<div class="six-six">
-						<div class="left">
-							<div>
-								<h2>Inbox</h2>
-								<div class="panel panel-default table-responsive">
-									<table class="table col-table table-condensed table-striped table-hover">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-default margin-top">
+								<div class="panel-heading"><strong>Inbox</strong></div>
+								<div class="panel-body table-responsive">
+									<table class="table table-condensed table-striped table-hover">
 										<thead>
 											<tr>
 												<th>Onderwerp</th><th>Van</th><th>Datum</th>
@@ -76,104 +76,101 @@
 											</tr>
 										</tbody>
 									</table>
-								</div>
-								<!--EMAIL POPUP ##################################################################################################-->
-								<div id="popupEmail" class="bpopup">
-									<span class="button b-close"><span>&times;</span></span>
-									<table class="table table-condensed">
-										<tr>
-											<td><b>Onderwerp:</b></td><td class="field"></td>
-										</tr>
-										<tr>
-											<td><b>Van:</b></td><td class="field"></td>
-										</tr>
-										<tr>
-											<td><b>Datum:</b></td><td class="field"></td>
-										</tr>
-									</table>
-									Geachte mijnheer, mevrouw
-									<p>
-										Deze e-mail betreft...<br/>
-										...<br/>
-										...<br/>
-										Met vriendelijke groet,<br/>
-										...
-									</p>
-								</div><!-- popupEmail -->
-							</div>
+									<!--EMAIL POPUP ##################################################################################################-->
+									<div id="popupEmail" class="bpopup">
+										<span class="button b-close"><span>&times;</span></span>
+										<table class="table table-condensed">
+											<tr>
+												<td><b>Onderwerp:</b></td><td class="field"></td>
+											</tr>
+											<tr>
+												<td><b>Van:</b></td><td class="field"></td>
+											</tr>
+											<tr>
+												<td><b>Datum:</b></td><td class="field"></td>
+											</tr>
+										</table>
+										Geachte mijnheer, mevrouw
+										<p>
+											Deze e-mail betreft...<br/>
+											...<br/>
+											...<br/>
+											Met vriendelijke groet,<br/>
+											...
+										</p>
+									</div><!-- popupEmail -->
+								</div> <!-- .panel-body -->
+							</div> <!-- .panel -->
+
 						</div> <!-- .left -->
-						<div class="right">
-							<div>
-								<h2>Telefoonkanaal</h2>
-								<div class="list-group">
-									<span class="list-group-item">
-										<h4 class="list-group-item-heading">Aantal in de wacht: <span class="label label-info">4</span></h4>
-									</span>
-									<span class="list-group-item">
-										<button type="button" id="phone" class="btn btn-primary btn-lg btn-block"><i class="fa fa-phone fa-5x"></i></button>
-									</span>
-								</div> <!-- .list-group -->
-							</div>
+						<div class="col-md-6">
+							<div class="panel panel-default margin-top">
+								<div class="panel-heading"><strong>Telefoonkanaal</strong></div>
+								<div class="panel-body table-responsive">
+									<h4 class="list-group-item-heading">Aantal in de wacht: <span class="label label-info">4</span></h4>
+									<button type="button" id="phone" class="btn btn-primary btn-lg btn-block"><i class="fa fa-phone fa-5x"></i></button>
+								</div> <!-- .panel-body -->
+							</div> <!-- .panel -->
 						</div> <!-- .right -->
 					</div> <!-- .six-six -->
-					<div class="twelve">
-						<h2>Reparatieverzoeken</h2>
-						<div class="panel panel-default">
-							<div class="panel-body table-responsive">
-								<div class="input-group">
+					<div class="panel panel-default">
+						<div class="panel-heading"><strong>Reparatieverzoeken</strong></div>
+						<div class="panel-body table-responsive">
+							<form class="form-inline">
+								<div class="input-group pull-right">
 									<input type="search" class="form-control" id="zoekTerm" placeholder="Geef zoekterm">
 									<span class="input-group-btn">
 										<button id="zoekBtn" class="btn btn-default" type="button"><i class="fa fa-search fa-lg"></i></button>
 									</span>
 								</div><!-- /input-group -->
+							</form>
 
-								<table id="repZoekResult" class="table table-condensed table-striped table-hover">
-									<thead>
-										<tr>
-											<th>Naam</th><th>Adres</th><th>Omschrijving</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr id="noResult">
-											<td colspan="1000">Geen resultaten gevonden</td>
-										</tr>
-										<tr class="pointer">
-											<td>Dhr. A. Janssen</td><td>Harselaarseweg 22 3771 MB Barneveld</td><td>Onderhoud cv-installatie</td>
-										</tr>
-										<tr class="pointer">
-											<td>Mw. P. Klaassen</td><td>Industrieweg 2A 3771 MC Barneveld</td><td>Reparatie dakgoot</td>
-										</tr>
-										<tr class="pointer">
-											<td>Mw. G. Pietersen</td><td>Baron van Nagelstraat 5 3771 MF Barneveld</td><td>Schilderwerk kozijnen</td>
-										</tr>
-										<tr class="pointer">
-											<td>Dhr. K. van Voorden</td><td>Nijverheidsweg 22 3770 MG Barneveld</td><td>Onderhoud electrische installatie</td>
-										</tr>
-									</tbody>
+							<table id="repZoekResult" class="table table-condensed table-striped table-hover">
+								<thead>
+									<tr>
+										<th>Naam</th><th>Adres</th><th>Omschrijving</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="noResult">
+										<td colspan="1000">Geen resultaten gevonden</td>
+									</tr>
+									<tr class="pointer">
+										<td>Dhr. A. Janssen</td><td>Harselaarseweg 22 3771 MB Barneveld</td><td>Onderhoud cv-installatie</td>
+									</tr>
+									<tr class="pointer">
+										<td>Mw. P. Klaassen</td><td>Industrieweg 2A 3771 MC Barneveld</td><td>Reparatie dakgoot</td>
+									</tr>
+									<tr class="pointer">
+										<td>Mw. G. Pietersen</td><td>Baron van Nagelstraat 5 3771 MF Barneveld</td><td>Schilderwerk kozijnen</td>
+									</tr>
+									<tr class="pointer">
+										<td>Dhr. K. van Voorden</td><td>Nijverheidsweg 22 3770 MG Barneveld</td><td>Onderhoud electrische installatie</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--REPARATIEVERZOEKEN POPUP ##################################################################################################-->
+							<div id="popupRepVerzoek" class="bpopup">
+								<span class="button b-close"><span>&times;</span></span>
+								<table class="table table-condensed">
+									<tr>
+										<td><b>Naam:</b></td><td class="field"></td>
+									</tr>
+									<tr>
+										<td><b>Adres:</b></td><td class="field"></td>
+									</tr>
+									<tr>
+										<td><b>Omschrijving:</b></td><td class="field"></td>
+									</tr>
 								</table>
-								<!--REPARATIEVERZOEKEN POPUP ##################################################################################################-->
-								<div id="popupRepVerzoek" class="bpopup">
-									<span class="button b-close"><span>&times;</span></span>
-									<table class="table table-condensed">
-										<tr>
-											<td><b>Naam:</b></td><td class="field"></td>
-										</tr>
-										<tr>
-											<td><b>Adres:</b></td><td class="field"></td>
-										</tr>
-										<tr>
-											<td><b>Omschrijving:</b></td><td class="field"></td>
-										</tr>
-									</table>
-									Details reparatieverzoek...<br/>
-									...<br/>
-									...<br/>
-									...
-								</div><!-- popupRepVerzoek -->
+								Details reparatieverzoek...<br/>
+								...<br/>
+								...<br/>
+								...
+							</div><!-- popupRepVerzoek -->
 
-							</div>
 						</div>
-					</div> <!-- .twelve -->
+					</div>
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->

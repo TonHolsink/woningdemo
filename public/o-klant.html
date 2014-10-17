@@ -47,11 +47,11 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-					<div class="six-six">
-						<div class="left">
+					<div class="row">
+						<div class="col-md-4">
 							<div class="panel panel-default margin-top">
 								<div class="panel-heading"><strong>Persoonsgegevens</strong></div>
-								<div class="panel-body">
+								<div class="panel-body table-responsive">
 									<table class="table-condensed">
 										<tr>
 											<td><strong>Klantnummer</strong></td><td>201412345</td>
@@ -72,10 +72,10 @@
 								</div> <!-- .panel-body -->
 							</div> <!-- .panel -->
 						</div> <!-- .left -->
-						<div class="right">
+						<div class="col-md-5">
 							<div class="panel panel-default margin-top">
 								<div class="panel-heading"><strong>Woninggegevens</strong></div>
-								<div class="panel-body">
+								<div class="panel-body table-responsive">
 									<table class="table-condensed">
 										<tr>
 											<td><strong>Type</strong></td><td>Eengezinswoning</td>
@@ -94,151 +94,148 @@
 								</div> <!-- .panel-body -->
 							</div> <!-- .panel -->
 						</div> <!-- .right -->
+						<div class="col-md-3">
+							<div class="panel panel-default margin-top">
+								<div class="panel-heading"><strong>Twitter</strong></div>
+								<div class="panel-body">
+								</div> <!-- .panel-body -->
+							</div> <!-- .panel -->
+						</div>
 					</div> <!-- .six-six -->
-					<div class="twelve">
-						<div id="contactHist" class="panel panel-default">
-							<div class="panel-heading"><strong>Contacthistorie</strong></div>
-							<div class="panel-body no-padding">
-								<div class="col-md-4 no-padding-leftright">
-									<div class="btn-toolbar my-toolbar" role="toolbar">
-										<div class="btn-group">
-											<select id="contactType" class="form-control">
-												<option>Alles</option>
-												<option>Email</option>
-												<option>Telefoon</option>
-											</select>
-											<select class="hidden form-control">
-												<option>Beide</option>
-												<option>In</option>
-												<option>Uit</option>
-											</select>
-										</div>
-									</div>
-									<div id="contactHistList" class="list-group no-margin-bottom scroll-y">
-										<a class="list-group-item pointer active" data-type="phone">
-											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">21-06-2014 14:00</span></div>
-											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-										</a>
-										<a class="list-group-item pointer" data-type="email">
-											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker2</span> <span class="pull-right field">19-06-2014 13:30</span></div>
-											<p class="list-group-item-text field">Onderwerp email...</p>
-										</a>
-										<a class="list-group-item pointer" data-type="phone">
-											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">19-06-2014 09:20</span></div>
-											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-										</a>
-										<a class="list-group-item pointer" data-type="email">
-											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker3</span> <span class="pull-right field">01-05-2014 12:30</span></div>
-											<p class="list-group-item-text field">Onderwerp email...</p>
-										</a>
-										<a class="list-group-item pointer" data-type="phone">
-											<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker4</span> <span class="pull-right field">12-04-2014 15:00</span></div>
-											<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
-										</a>
-										<a class="list-group-item pointer" data-type="email">
-											<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker1</span> <span class="pull-right field">11-04-2014 16:15</span></div>
-											<p class="list-group-item-text field">Onderwerp email...</p>
-										</a>
+					<div id="contactHist" class="panel panel-default">
+						<div class="panel-heading"><strong>Contacthistorie</strong></div>
+						<div class="panel-body no-padding">
+							<div class="col-md-4 no-padding-leftright">
+								<div class="btn-toolbar my-toolbar" role="toolbar">
+									<div class="btn-group">
+										<select id="contactType" class="form-control">
+											<option>Alles</option>
+											<option>Email</option>
+											<option>Telefoon</option>
+										</select>
+										<select class="hidden form-control">
+											<option>Beide</option>
+											<option>In</option>
+											<option>Uit</option>
+										</select>
 									</div>
 								</div>
-								<div class="col-md-8 no-padding-leftright margin-top">
-									<div class="btn-toolbar my-toolbar" role="toolbar"></div>
-									<div id="contactHistDetail" class="padding-leftright padding-bottom scroll-y table-responsive">
-										<h4><i class="fa fa-phone"></i> <span class="field">Onderwerp telefoongesprek...</span></h4>
-										<table class="table-condensed">
-											<tr>
-												<td><b>tijdstip:</b></td><td class="field">21-06-2014 14:00:00</td>
-											</tr>
-											<tr>
-												<td><b>door:</b></td><td class="field">Medewerker1</td>
-											</tr>
-											<tr>
-												<td><b>met:</b></td><td>Dhr. P. Persoon</td>
-											</tr>
-											<tr>
-												<td colspan="2"><a href="javascript:;"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
-											</tr>
-										</table>
-										Hieronder volgen de aantekeningen:<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-										...<br/>
-									</div>
+								<div id="contactHistList" class="list-group no-margin-bottom scroll-y">
+									<a class="list-group-item pointer active" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">21-06-2014 14:00</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+									</a>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker2</span> <span class="pull-right field">19-06-2014 13:30</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
+									</a>
+									<a class="list-group-item pointer" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker1</span> <span class="pull-right field">19-06-2014 09:20</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+									</a>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker3</span> <span class="pull-right field">01-05-2014 12:30</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
+									</a>
+									<a class="list-group-item pointer" data-type="phone">
+										<div class="list-group-item-heading"><i class="fa fa-phone"></i> <span class="field">Medewerker4</span> <span class="pull-right field">12-04-2014 15:00</span></div>
+										<p class="list-group-item-text field">Onderwerp telefoongesprek...</p>
+									</a>
+									<a class="list-group-item pointer" data-type="email">
+										<div class="list-group-item-heading"><i class="fa fa-envelope-o"></i> <span class="field">Medewerker1</span> <span class="pull-right field">11-04-2014 16:15</span></div>
+										<p class="list-group-item-text field">Onderwerp email...</p>
+									</a>
 								</div>
-							</div> <!-- .panel-body -->
-						</div> <!-- .panel -->
-					</div> <!-- .twelve -->
-					<div class="twelve">
-						<h2>Financi&euml;le gegevens</h2>
-							<div class="list-group">
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Openstaande rekeningen</h4>
-									<div class="list-group-item-text table-responsive">
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-													<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>31-07-2014</td><td>450,75</td><td>huur augustus 2014</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Betaalachterstand</h4>
-									<div class="list-group-item-text table-responsive">
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-													<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>30-06-2014</td><td>450,75</td><td>huur juli 2014</td>
-												</tr>
-												<tr>
-													<td>30-06-2014</td><td>149,15</td><td>afrekening servicekosten</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Afspraken tot aflossing</h4>
-									<div class="list-group-item-text">Afspraken tot aflossing</div>
-								</span>
-								<span class="list-group-item">
-									<h4 class="list-group-item-heading">Huidige te betalen maandelijkse bedragen</h4>
-									<div class="list-group-item-text table-responsive">
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-													<th>Omschrijving</th><th>Bedrag</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Huur</td><td>450,75</td>
-												</tr>
-												<tr>
-													<td>Servicekosten</td><td>149,15</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</span>
-							</div> <!-- .list-group -->
-					</div> <!-- .twelve -->
+							</div>
+							<div class="col-md-8 no-padding-leftright margin-top">
+								<div class="btn-toolbar my-toolbar" role="toolbar"></div>
+								<div id="contactHistDetail" class="padding-leftright padding-bottom scroll-y table-responsive">
+									<h4><i class="fa fa-phone"></i> <span class="field">Onderwerp telefoongesprek...</span></h4>
+									<table class="table-condensed">
+										<tr>
+											<td><b>tijdstip:</b></td><td class="field">21-06-2014 14:00:00</td>
+										</tr>
+										<tr>
+											<td><b>door:</b></td><td class="field">Medewerker1</td>
+										</tr>
+										<tr>
+											<td><b>met:</b></td><td>Dhr. P. Persoon</td>
+										</tr>
+										<tr>
+											<td colspan="2"><a href="javascript:;"><img src="img/worddoc.jpg">document1 (10.2 KB)</a></td>
+										</tr>
+									</table>
+									Hieronder volgen de aantekeningen:<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+									...<br/>
+								</div>
+							</div>
+						</div> <!-- .panel-body -->
+					</div> <!-- .panel -->
+					<div class="panel panel-default margin-top">
+						<div class="panel-heading"><strong>Financi&euml;le gegevens</strong></div>
+						<div class="panel-body table-responsive">
+							<h4>Openstaande rekeningen</h4>
+							<div class="list-group-item-text">
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>31-07-2014</td><td>450,75</td><td>huur augustus 2014</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h4>Betaalachterstand</h4>
+							<div class="list-group-item-text">
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Uiterste betaaldatum</th><th>Bedrag</th><th>Soort</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>30-06-2014</td><td>450,75</td><td>huur juli 2014</td>
+										</tr>
+										<tr>
+											<td>30-06-2014</td><td>149,15</td><td>afrekening servicekosten</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h4>Afspraken tot aflossing</h4>
+							<div class="list-group-item-text">Afspraken tot aflossing</div>
+							<h4>Huidige te betalen maandelijkse bedragen</h4>
+							<div class="list-group-item-text">
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Omschrijving</th><th>Bedrag</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Huur</td><td>450,75</td>
+										</tr>
+										<tr>
+											<td>Servicekosten</td><td>149,15</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div> <!-- .panel-body -->
+					</div> <!-- .panel -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
