@@ -1,4 +1,4 @@
-(/**
+/**
  * @fileOverview Dashboard Demo
  * @author Ton Holsink
  *
