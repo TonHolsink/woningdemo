@@ -46,36 +46,14 @@
 			<div class="main-content">
 				<div class="content-area">
 						<h1>Test</h1>
-						<form class="form-horizontal" role="form">
-							<div class="form-group has-feedback">
-								<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-								<div class="col-sm-10">
-									<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-									<span class="glyphicon yr-gi-required-field form-control-feedback"></span>
-								</div>
-							</div>
-							<div class="form-group has-feedback">
-								<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-								<div class="col-sm-10">
-									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-									<span class="glyphicon yr-gi-required-field form-control-feedback"></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<div class="checkbox">
-										<label>
-											<input type="checkbox"> Remember me
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button type="submit" class="btn btn-default">Sign in</button>
-								</div>
-							</div>
-						</form>
+						<div class="text-right" role="toolbar">
+							<ul class="pagination pagination-sm">
+								<li class="disabled"><span id="pgHome" class="btn-link"><i class="fa fa-angle-double-left"></i></span></li>
+								<li><span id="pgBwd" class="btn-link"><i class="fa fa-angle-left"></i></span></li>
+								<li class="active"><span>42</span></li>
+								<li><span id="pgFwd" class="btn-link"><i class="fa fa-angle-right"></i></span></li>
+							</ul>
+						</div>
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
@@ -104,6 +82,45 @@
 	 */
 	$(function() {
 
+		function cbTester(a, cb) {
+			console.log(a);
+			if (cb && typeof(cb) === "function") {
+				cb();
+			}
+		}
+
+		function print(a, b) {
+			console.log(a + ", " + b);
+		}
+
+		var code="REPORT",
+		pgNum = 1,
+		lastPage = true;
+		cbTester('Hallo', function() {
+			print(code, pgNum);
+		});
+
+		$('#pgHome').on('click', function(event) {
+			if ($(this).parent().hasClass('disabled')) {
+				event.preventDefault();
+			} else {
+				alert('HOME');
+			}
+		});
+		$('#pgBwd').on('click', function(event) {
+			if ($(this).parent().hasClass('disabled')) {
+				event.preventDefault();
+			} else {
+				alert('BWD');
+			}
+		});
+		$('#pgFwd').on('click', function(event) {
+			if ($(this).parent().hasClass('disabled')) {
+				event.preventDefault();
+			} else {
+				alert('FWD');
+			}
+		});
 
 	});
 
