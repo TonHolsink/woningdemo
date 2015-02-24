@@ -17,126 +17,42 @@
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html"><img class="logo" src="img/mijnwoonwaard.png" /></a>
 
-				</div> <!-- .navbar-header -->
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="#about">Over</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-					<div class="navbar-right status">
-						Ingelogd als: Bas de Jong
-					</div> <!-- .navbar-right -->
-				</div> <!-- .navbar-collapse -->
-			</div> <!-- .container -->
-		</div> <!-- .navbar -->
 
-		<div class="main-intro"> </div>
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-						<h1>Test</h1>
-						<div class="text-right" role="toolbar">
-							<ul class="pagination pagination-sm">
-								<li class="disabled"><span id="pgHome" class="btn-link"><i class="fa fa-angle-double-left"></i></span></li>
-								<li><span id="pgBwd" class="btn-link"><i class="fa fa-angle-left"></i></span></li>
-								<li class="active"><span>42</span></li>
-								<li><span id="pgFwd" class="btn-link"><i class="fa fa-angle-right"></i></span></li>
-							</ul>
-						</div>
+
+								<div id="miopreventionFormDiv" class="panel panel-default marginTop">
+
+									<div class="panel-body bg-info">
+										<form id="miopreventionForm" method="post" action="/b/miocheck2.html" onsubmit="return false">
+											<div>
+												<select name="checkCategory" onkeypress="return entsub(event);" id="checkCategory">
+													<option value="">Kies categorie</option>
+													<option value="2">Categorie_1</option>
+													<option value="3">Categorie_2</option>
+												</select>
+												<span class="ietje" title="Dit veld is niet verplicht, maar helpt ons bij het onderzoek naar internetoplichting.">i</span>
+											</div>
+											<div class="marginTop">
+												<label>Controleer op</label> <input type="text" size="40" maxlength="40" id="sTerm" onkeyup="return entsub(this)" name="searchTerm"/>
+											</div>
+											<div class="marginTop">
+												<strong>Toon aan dat u een persoon bent, bereken: </strong><span id="mioCalculation">3 + 2</span> = <input type="text" size="5" maxlength="5" id="result" onkeyup="return entsub(this)" name="result"/>
+											</div>
+											<div class="marginTop">
+												<button class="" onclick="javascript:checkOrNot()">controleer</button>
+											</div>
+											<div id="mioPreventionResult" class="marginTop"></div>
+										</form>
+									</div>
+								</div>
+
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
 
-		<div class="container">
-			<div class="footer">
-				<hr>
-				<footer>
-					<p>&copy; YourRequest 2014</p>
-				</footer>
-			</div> <!-- footer -->
-		</div> <!-- .container -->
-
-
-		<script src="js/vendor/jquery-1.11.0.min.js"></script>
-		<script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/tools.js"></script>
-
-<script type="text/javascript">
-//<![CDATA[
-
-(function() {
-
-	/**
-	 * The jQuery $(document).ready() block.
-	 */
-	$(function() {
-
-		function cbTester(a, cb) {
-			console.log(a);
-			if (cb && typeof(cb) === "function") {
-				cb();
-			}
-		}
-
-		function print(a, b) {
-			console.log(a + ", " + b);
-		}
-
-		var code="REPORT",
-		pgNum = 1,
-		lastPage = true;
-		cbTester('Hallo', function() {
-			print(code, pgNum);
-		});
-
-		$('#pgHome').on('click', function(event) {
-			if ($(this).parent().hasClass('disabled')) {
-				event.preventDefault();
-			} else {
-				alert('HOME');
-			}
-		});
-		$('#pgBwd').on('click', function(event) {
-			if ($(this).parent().hasClass('disabled')) {
-				event.preventDefault();
-			} else {
-				alert('BWD');
-			}
-		});
-		$('#pgFwd').on('click', function(event) {
-			if ($(this).parent().hasClass('disabled')) {
-				event.preventDefault();
-			} else {
-				alert('FWD');
-			}
-		});
-
-	});
-
-})();
-
-//]]>
-</script>
-
-<script>
-//<![CDATA[
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src='//www.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-//]]>
-</script>
 
 	</body>
 </html>
