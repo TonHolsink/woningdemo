@@ -29,6 +29,9 @@
 				border-color: #FFF;
 				box-shadow: none;
 			}
+			#treeDiv .form-control[readonly] ~ a.input-group-addon {
+				display: none;
+			}
 			#treeDiv .form-group-sm {
 				margin-bottom: 1px;
 				border-bottom: 1px solid #CCC;
@@ -36,8 +39,11 @@
 			#treeDiv .edit .form-group-sm {
 				border-bottom: 1px solid #FFF;
 			}
+			#treeDiv .input-group-addon {
+				padding: 4px 6px;
+			}
 			i.tree-item-link {
-				padding-top: 3px;
+				padding-top: 2px;
 			}
 			.detailToolbar {
 				margin-top: 5px;
@@ -80,40 +86,44 @@
 					<div id="treeDiv">
 						<ul class="tree fa-ul">
 							<li class="tree-item">
-								<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right"></i><input class="form-control" type="text" value="Begane grond" readonly></a>
+								<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Begane grond" readonly></a>
 								<div class="detailDiv" style="display: none;">
 									<div class="detailToolbar">
 										<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
 										<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
 										<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
+										<button class="deleteDetails btn btn-primary btn-sm pull-right" style="display: none;">Verwijderen</button>
 									</div>
-									<h3>Vaste gegevens</h3>
+									<h4>Vaste gegevens</h4>
 									<form class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
-											</div>
+											<label class="col-sm-3">
+												label
+											</label>
 											<div class="col-sm-9">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
-											</div>
+											<label class="col-sm-3">
+												label
+											</label>
 											<div class="col-sm-9">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
 									</form>
-									<h3>Variabele gegevens</h3>
+									<h4>Variabele gegevens</h4>
 									<form class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
 											<div class="col-sm-3">
 												<input class="form-control edit-label" type="text" value="label" readonly>
 											</div>
 											<div class="col-sm-9">
-												<input class="form-control" type="text" value="value" readonly>
+												<div class="input-group ">
+													<input class="form-control" type="text" value="value" readonly>
+													<a class="deleteItem input-group-addon" href="javascript:;"><i class="fa fa-minus-square fa-fw"></i></a>
+												</div>
 											</div>
 										</div>
 										<div class="form-group form-group-sm">
@@ -121,39 +131,43 @@
 												<input class="form-control edit-label" type="text" value="label" readonly>
 											</div>
 											<div class="col-sm-9">
-												<input class="form-control" type="text" value="value" readonly>
+												<div class="input-group ">
+													<input class="form-control" type="text" value="value" readonly>
+													<a class="deleteItem input-group-addon" href="javascript:;"><i class="fa fa-minus-square fa-fw"></i></a>
+												</div>
 											</div>
 										</div>
 									</form>
 									<ul class="tree fa-ul">
 										<li class="tree-item">
-											<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right"></i>Hal</a>
+											<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i>Hal</a>
 											<div class="detailDiv" style="display: none;">
 												<div class="detailToolbar">
 													<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
 													<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
 													<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
+													<button class="deleteDetails btn btn-primary btn-sm pull-right" style="display: none;">Verwijderen</button>
 												</div>
-												<h3>Vaste gegevens</h3>
+												<h4>Vaste gegevens</h4>
 												<form class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
-														</div>
+														<label class="col-sm-3">
+															label
+														</label>
 														<div class="col-sm-9">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
-														</div>
+														<label class="col-sm-3">
+															label
+														</label>
 														<div class="col-sm-9">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
 												</form>
-												<h3>Variabele gegevens</h3>
+												<h4>Variabele gegevens</h4>
 												<form class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
 														<div class="col-sm-3">
@@ -174,11 +188,11 @@
 												</form>
 												<ul class="tree fa-ul">
 													<li class="tree-item">
-														<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right"></i>Item1</a>
+														<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i>Item1</a>
 														<div class="detailDiv" style="display: none;">
 															<ul class="tree fa-ul">
 																<li class="tree-item">
-																	<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right"></i>Item1</a>
+																	<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i>Item1</a>
 																</li>
 															</ul>
 														</div>
@@ -208,6 +222,7 @@
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/vendor/jquery.bpopup.min.js"></script>
 		<script src="js/jquery-ext.js"></script>
+		<script src="js/vendor/bootbox.min.js"></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -226,8 +241,9 @@
 			var $el = $(event.target);
 			//tree-item-link
 			if ($el.hasClass('tree-item-link')) {
-				var $detailDiv = $el.closest('li').children('.detailDiv').toggle();
-				$el.find('i').toggleClass('fa-rotate-90');
+				var $li = $el.closest('li');
+				var $detailDiv = $li.children('.detailDiv').toggle();
+				$li.children('a').children('i').toggleClass('fa-rotate-90');
 				if ($detailDiv.is(':visible')) {
 					showToolbar($detailDiv);
 				}
@@ -257,6 +273,19 @@
 				$forms.find('input[type=text]').attr('readonly', '');
 				$el.closest('li').children('a').children('input[type=text]').attr('readonly', '');
 				isDirty = false;
+			//deleteDetails
+			} else if ($el.hasClass('deleteDetails')) {
+				bootbox.confirm("Weet u zeker dat u dit item wilt verwijderen?. Alle geneste items zullen ook worden verwijderd!!!", function(result) {
+					if (result) {
+						$el.hide();
+						$el.siblings().toggle();
+						alert('VERWIJDERD!');
+						var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
+						$forms.find('input[type=text]').attr('readonly', '');
+						$el.closest('li').children('a').children('input[type=text]').attr('readonly', '');
+						isDirty = false;
+					}
+				});
 			}
 		});
 
