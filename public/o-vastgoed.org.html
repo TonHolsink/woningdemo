@@ -15,32 +15,17 @@
 		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
 		<style type="text/css">
-			#treeDiv .form-control{
-				font-size: 14px;
-				height: 24px;
-				padding: 0 6px;
-			}
-			#treeDiv .form-control.edit-label{
-				font-weight: bold;
-			}
-			#treeDiv .form-control[readonly] {
+			.form-readonly .form-control[readonly] {
 				cursor: auto;
 				background-color: #FFF;
 				border-color: #FFF;
 				box-shadow: none;
 			}
-			#treeDiv .form-group-sm {
+			.form-group-sm {
 				margin-bottom: 1px;
-				border-bottom: 1px solid #CCC;
 			}
-			#treeDiv .edit .form-group-sm {
-				border-bottom: 1px solid #FFF;
-			}
-			i.tree-item-link {
-				padding-top: 3px;
-			}
-			.detailToolbar {
-				margin-top: 5px;
+			.form-group-sm .form-control{
+				font-size: 14px;
 			}
 		</style>
 	</head>
@@ -84,24 +69,24 @@
 								<div class="detailDiv" style="display: none;">
 									<div class="detailToolbar">
 										<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
-										<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
 										<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
+										<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
 									</div>
 									<h3>Vaste gegevens</h3>
 									<form class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
+											<div class="col-sm-2">
+												<input class="form-control" type="text" value="label" readonly>
 											</div>
-											<div class="col-sm-9">
+											<div class="col-sm-10">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
+											<div class="col-sm-2">
+												<input class="form-control" type="text" value="label" readonly>
 											</div>
-											<div class="col-sm-9">
+											<div class="col-sm-10">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
@@ -109,18 +94,18 @@
 									<h3>Variabele gegevens</h3>
 									<form class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
+											<div class="col-sm-2">
+												<input class="form-control" type="text" value="label" readonly>
 											</div>
-											<div class="col-sm-9">
+											<div class="col-sm-10">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
 										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
+											<div class="col-sm-2">
+												<input class="form-control" type="text" value="label" readonly>
 											</div>
-											<div class="col-sm-9">
+											<div class="col-sm-10">
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
@@ -137,18 +122,18 @@
 												<h3>Vaste gegevens</h3>
 												<form class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
+														<div class="col-sm-2">
+															<input class="form-control" type="text" value="label" readonly>
 														</div>
-														<div class="col-sm-9">
+														<div class="col-sm-10">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
+														<div class="col-sm-2">
+															<input class="form-control" type="text" value="label" readonly>
 														</div>
-														<div class="col-sm-9">
+														<div class="col-sm-10">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
@@ -156,18 +141,18 @@
 												<h3>Variabele gegevens</h3>
 												<form class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
+														<div class="col-sm-2">
+															<input class="form-control" type="text" value="label" readonly>
 														</div>
-														<div class="col-sm-9">
+														<div class="col-sm-10">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
 													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
+														<div class="col-sm-2">
+															<input class="form-control" type="text" value="label" readonly>
 														</div>
-														<div class="col-sm-9">
+														<div class="col-sm-10">
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
@@ -233,9 +218,7 @@
 				}
 			//editDetails
 			} else if ($el.hasClass('editDetails')) {
-				var $forms = $el.parent().siblings('.form-readonly').addClass('edit');
-				$forms.find('input[readonly]').removeAttr('readonly');
-				$el.closest('li').children('a').children('input[readonly]').removeAttr('readonly');
+				$el.parent().siblings('.form-readonly').find('input[readonly]').removeAttr('readonly');
 				$el.hide();
 				$el.siblings().toggle();
 				isDirty = true;
@@ -244,18 +227,14 @@
 				$el.hide();
 				$el.siblings().toggle();
 				alert('OPGESLAGEN!');
-				var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
-				$forms.find('input[type=text]').attr('readonly', '');
-				$el.closest('li').children('a').children('input[type=text]').attr('readonly', '');
+				$el.parent().siblings('.form-readonly').find('input[type=text]').attr('readonly', '');
 				isDirty = false;
 			//escapeDetails
 			} else if ($el.hasClass('escapeDetails')) {
 				$el.hide();
 				$el.siblings().toggle();
 				alert('GEANNULEERD!');
-				var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
-				$forms.find('input[type=text]').attr('readonly', '');
-				$el.closest('li').children('a').children('input[type=text]').attr('readonly', '');
+				$el.parent().siblings('.form-readonly').find('input[type=text]').attr('readonly', '');
 				isDirty = false;
 			}
 		});
