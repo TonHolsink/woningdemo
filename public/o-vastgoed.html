@@ -334,6 +334,30 @@
 	var isEditMode = true;
 	var $changedItem;
 
+	//Nodig om de standaard volgorde van de buttons te veranderen
+	function confirm(message, cb) {
+		bootbox.dialog({
+			message: message,
+			// title: "Custom title",
+			buttons: {
+				OK: {
+					label: "Ok",
+					// className: "btn-default",
+					callback: function() {
+						cb(true);
+					}
+				},
+				CANCEL: {
+					label: "Annuleren",
+					// className: "btn-primary",
+					callback: function() {
+						cb(false);
+					}
+				}
+			}
+		});
+	}
+
 	function scrollIntoView(el) {
 		$('html, body').animate({
 			//Beetje gokken (-50 compenseert voor menubar)
@@ -400,7 +424,7 @@
 				isDirty = false;
 			//deleteDetails
 			} else if ($el.hasClass('deleteDetails')) {
-				bootbox.confirm("Weet u zeker dat u dit item wilt verwijderen?. Alle geneste items zullen ook worden verwijderd!!!", function(result) {
+				confirm("Weet u zeker dat u dit item wilt verwijderen? Alle geneste items zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
 						$el.closest('li').remove();
 						toastr['info']('VERWIJDERD!');
