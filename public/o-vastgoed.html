@@ -53,6 +53,9 @@
 			.toolbar-sm .btn{
 				padding: 0 12px;
 			}
+			#treeDiv ul ul {
+				margin-top: 5px;
+			}
 			@media (max-width: 768px) {
 				#treeDiv ul ul {
 					margin-left: 0px;
@@ -61,6 +64,13 @@
 			.tbAddData {
 				text-align: right;
 				display: none;
+			}
+			@media (min-width: 768px) {
+				#treeDiv .detailDiv {
+					border-left: 1px solid #337AB7;
+					margin-left: -16px;
+					padding-left: 16px;
+				}
 			}
 		</style>
 	</head>
@@ -295,7 +305,7 @@
 								<button class="addItem btn btn-default" title="Voeg item toe"><i class="fa fa-plus"></i><i class="fa fa-plus"></i></button>
 							</div>
 						</div>
-					</div>
+					</div> <!-- treeDiv -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
@@ -332,16 +342,18 @@
 	};
 
 	function resetItemToNonEditState($li) {
-		//Alleen edit knop zichtbaar maken in toolbar
-		var $tb = $li.find('.tbEdit').first();
-		$tb.children().hide();
-		$tb.children('.editDetails').show();
-		//inputs readonly maken
-		var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
-		$forms.find('input[type=text]').attr('readonly', '');
-		$li.children('a').children('input[type=text]').attr('readonly', '');
-		//addData knop verbergen
-		$li.find('.tbAddData').first().hide();
+		if (typeof $li !== 'undefined') {
+			//Alleen edit knop zichtbaar maken in toolbar
+			var $tb = $li.find('.tbEdit').first();
+			$tb.children().hide();
+			$tb.children('.editDetails').show();
+			//inputs readonly maken
+			var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
+			$forms.find('input[type=text]').attr('readonly', '');
+			$li.children('a').children('input[type=text]').attr('readonly', '');
+			//addData knop verbergen
+			$li.find('.tbAddData').first().hide();
+		}
 	}
 
 	$(function() {
@@ -356,11 +368,15 @@
 			} else if ($el.hasClass('editDetails')) {
 				//Verhinder bewerken van dit level als isDirty
 				if (isDirty) {
-					bootbox.alert('Er zijn wijzigingen in een ander item die nog niet zijn opgeslagen.<br/>U moet deze wijzingen eerst opslaan of annuleren voordat u een ander item kunt wijzigen.');
-					//Scroll gewijzigde item in beeld
-					scrollIntoView($changedItem);
+					bootbox.alert('Er zijn wijzigingen in een ander item die nog niet zijn opgeslagen.<br/>U moet deze wijzingen eerst opslaan of annuleren voordat u een ander item kunt wijzigen.', function() {
+						//Scroll gewijzigde item in beeld
+						scrollIntoView($changedItem);
+					});
 					return;
 				}
+				//reset evt vorige item.
+				//functie test op undefined van $changedItem
+				resetItemToNonEditState($changedItem);
 				var $li = $el.closest('li');
 				var $forms = $li.children('.detailDiv').children('.form-readonly').addClass('edit');
 				$forms.find('input[readonly]').removeAttr('readonly');
