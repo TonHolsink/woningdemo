@@ -1,0 +1,5 @@
+Openen scherm:
+Alle top-levels dichtgeklapt
+++ onderaan zichtbaar voor toevoegen toplevel
+isDirty = false
+

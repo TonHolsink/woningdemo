@@ -296,15 +296,15 @@
 												</ul>
 											</div>
 										</li>
-										<div style="text-align: right;">
-											<div class="toolbar-sm btn-group">
-												<button class="addItem btn btn-default" title="Voeg item toe"><i class="fa fa-plus"></i><i class="fa fa-plus"></i></button>
-											</div>
-										</div>
 									</ul>
 								</div>
 							</li>
 						</ul>
+						<div style="text-align: right;">
+							<div class="toolbar-sm btn-group">
+								<button class="addItem btn btn-default" title="Voeg item toe"><i class="fa fa-plus"></i><i class="fa fa-plus"></i></button>
+							</div>
+						</div>
 					</div>
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
@@ -323,6 +323,7 @@
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/vendor/jquery.bpopup.min.js"></script>
 		<script src="js/jquery-ext.js"></script>
+		<script src="js/vendor/toastr.min.js"></script>
 		<script src="js/vendor/bootbox.min.js"></script>
 
 <script type="text/javascript">
@@ -330,6 +331,7 @@
 
 (function() {
 	var isDirty = false;
+	var isEditMode = true;
 
 	$(function() {
 		$('#treeDiv').on('click', function(event) {
@@ -351,7 +353,7 @@
 				isDirty = true;
 			//saveDetails
 			} else if ($el.hasClass('saveDetails')) {
-				alert('OPGESLAGEN!');
+				toastr['info']('OPGESLAGEN!');
 				$el.hide();
 				$el.siblings().toggle();
 				// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
@@ -362,7 +364,7 @@
 				isDirty = false;
 			//escapeDetails
 			} else if ($el.hasClass('escapeDetails')) {
-				alert('GEANNULEERD!');
+				toastr['info']('GEANNULEERD!');
 				$el.hide();
 				$el.siblings().toggle();
 				// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
@@ -375,7 +377,7 @@
 			} else if ($el.hasClass('deleteDetails')) {
 				bootbox.confirm("Weet u zeker dat u dit item wilt verwijderen?. Alle geneste items zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
-						alert('VERWIJDERD!');
+						toastr['info']('VERWIJDERD!');
 						$el.hide();
 						$el.siblings().toggle();
 						// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
@@ -388,12 +390,12 @@
 				});
 			//deleteData
 			} else if ($el.hasClass('deleteData')) {
-				alert('VERWIJDERD!');
+				toastr['info']('VERWIJDERD!');
 				$el.closest('.form-group').remove();
 				isDirty = true;
 			//addData
 			} else if ($el.hasClass('addData')) {
-				alert('TOEGEVOEGD!');
+				toastr['info']('TOEGEVOEGD!');
 				isDirty = true;
 			}
 		});
