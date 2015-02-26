@@ -3,3 +3,7 @@ Alle top-levels dichtgeklapt
 ++ onderaan zichtbaar voor toevoegen toplevel
 isDirty = false
 
+
+Klikken edit-button:
+Als isDirty dan melding: Er zijn wijzigingen.
+Verhinderen mutaties andere levels door click te negeren.

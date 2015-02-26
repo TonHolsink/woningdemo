@@ -58,6 +58,10 @@
 					margin-left: 0px;
 				}
 			}
+			.tbAddData {
+				text-align: right;
+				display: none;
+			}
 		</style>
 	</head>
 	<body class="with-navbar-top">
@@ -98,16 +102,8 @@
 							<li class="tree-item">
 								<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Begane grond" readonly></a>
 								<div class="detailDiv" style="display: none;">
-									<!--
-									<div class="toolbar-sm">
-										<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
-										<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
-										<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
-										<button class="deleteDetails btn btn-primary btn-sm" style="display: none;">Verwijderen</button>
-									</div>
-									-->
 									<div style="text-align: right;">
-										<div class="toolbar-sm btn-group">
+										<div class="tbEdit toolbar-sm btn-group">
 											<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
 											<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
 											<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
@@ -115,7 +111,7 @@
 										</div>
 									</div>
 									<h4>Vaste gegevens</h4>
-									<form class="form-horizontal form-readonly">
+									<div class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
 											<label class="col-sm-3">
 												label
@@ -132,9 +128,9 @@
 												<input class="form-control" type="text" value="value" readonly>
 											</div>
 										</div>
-									</form>
+									</div>
 									<h4>Variabele gegevens</h4>
-									<form class="form-horizontal form-readonly">
+									<div class="form-horizontal form-readonly">
 										<div class="form-group form-group-sm">
 											<div class="col-sm-3">
 												<input class="form-control edit-label" type="text" value="label" readonly>
@@ -157,8 +153,8 @@
 												</div>
 											</div>
 										</div>
-									</form>
-									<div style="text-align: right;">
+									</div>
+									<div class="tbAddData">
 										<div class="toolbar-sm btn-group">
 											<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
 										</div>
@@ -167,16 +163,8 @@
 										<li class="tree-item">
 											<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Hal" readonly></a>
 											<div class="detailDiv" style="display: none;">
-												<!--
-												<div class="toolbar-sm">
-													<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
-													<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
-													<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
-													<button class="deleteDetails btn btn-primary btn-sm" style="display: none;">Verwijderen</button>
-												</div>
-												-->
 												<div style="text-align: right;">
-													<div class="toolbar-sm btn-group">
+													<div class="tbEdit toolbar-sm btn-group">
 														<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
 														<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
 														<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
@@ -184,7 +172,7 @@
 													</div>
 												</div>
 												<h4>Vaste gegevens</h4>
-												<form class="form-horizontal form-readonly">
+												<div class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
 														<label class="col-sm-3">
 															label
@@ -201,9 +189,9 @@
 															<input class="form-control" type="text" value="value" readonly>
 														</div>
 													</div>
-												</form>
+												</div>
 												<h4>Variabele gegevens</h4>
-												<form class="form-horizontal form-readonly">
+												<div class="form-horizontal form-readonly">
 													<div class="form-group form-group-sm">
 														<div class="col-sm-3">
 															<input class="form-control edit-label" type="text" value="label" readonly>
@@ -226,21 +214,18 @@
 															</div>
 														</div>
 													</div>
-												</form>
+												</div>
+												<div class="tbAddData">
+													<div class="toolbar-sm btn-group">
+														<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
+													</div>
+												</div>
 												<ul class="tree fa-ul">
 													<li class="tree-item">
 														<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Deur" readonly></a>
 														<div class="detailDiv" style="display: none;">
-															<!--
-															<div class="toolbar-sm">
-																<button class="editDetails btn btn-primary btn-sm">Wijzig</button>
-																<button class="escapeDetails btn btn-primary btn-sm" style="display: none;">Annuleren</button>
-																<button class="saveDetails btn btn-primary btn-sm" style="display: none;">Opslaan</button>
-																<button class="deleteDetails btn btn-primary btn-sm" style="display: none;">Verwijderen</button>
-															</div>
-															-->
 															<div style="text-align: right;">
-																<div class="toolbar-sm btn-group">
+																<div class="tbEdit toolbar-sm btn-group">
 																	<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
 																	<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
 																	<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
@@ -248,7 +233,7 @@
 																</div>
 															</div>
 															<h4>Vaste gegevens</h4>
-															<form class="form-horizontal form-readonly">
+															<div class="form-horizontal form-readonly">
 																<div class="form-group form-group-sm">
 																	<label class="col-sm-3">
 																		label
@@ -265,9 +250,9 @@
 																		<input class="form-control" type="text" value="value" readonly>
 																	</div>
 																</div>
-															</form>
+															</div>
 															<h4>Variabele gegevens</h4>
-															<form class="form-horizontal form-readonly">
+															<div class="form-horizontal form-readonly">
 																<div class="form-group form-group-sm">
 																	<div class="col-sm-3">
 																		<input class="form-control edit-label" type="text" value="label" readonly>
@@ -290,7 +275,12 @@
 																		</div>
 																	</div>
 																</div>
-															</form>
+															</div>
+															<div class="tbAddData">
+																<div class="toolbar-sm btn-group">
+																	<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
+																</div>
+															</div>
 														</div>
 													</li>
 												</ul>
@@ -332,6 +322,27 @@
 (function() {
 	var isDirty = false;
 	var isEditMode = true;
+	var $changedItem;
+
+	function scrollIntoView(el) {
+		$('html, body').animate({
+			//Beetje gokken (-50 compenseert voor menubar)
+			scrollTop: el.offset().top - 70
+		}, 1000);
+	};
+
+	function resetItemToNonEditState($li) {
+		//Alleen edit knop zichtbaar maken in toolbar
+		var $tb = $li.find('.tbEdit').first();
+		$tb.children().hide();
+		$tb.children('.editDetails').show();
+		//inputs readonly maken
+		var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
+		$forms.find('input[type=text]').attr('readonly', '');
+		$li.children('a').children('input[type=text]').attr('readonly', '');
+		//addData knop verbergen
+		$li.find('.tbAddData').first().hide();
+	}
 
 	$(function() {
 		$('#treeDiv').on('click', function(event) {
@@ -343,63 +354,70 @@
 				$li.children('a').children('i').toggleClass('fa-rotate-90');
 			//editDetails
 			} else if ($el.hasClass('editDetails')) {
-				// var $forms = $el.parent().siblings('.form-readonly').addClass('edit');
+				//Verhinder bewerken van dit level als isDirty
+				if (isDirty) {
+					bootbox.alert('Er zijn wijzigingen in een ander item die nog niet zijn opgeslagen.<br/>U moet deze wijzingen eerst opslaan of annuleren voordat u een ander item kunt wijzigen.');
+					//Scroll gewijzigde item in beeld
+					scrollIntoView($changedItem);
+					return;
+				}
 				var $li = $el.closest('li');
 				var $forms = $li.children('.detailDiv').children('.form-readonly').addClass('edit');
 				$forms.find('input[readonly]').removeAttr('readonly');
 				$li.children('a').children('input[readonly]').removeAttr('readonly');
 				$el.hide();
 				$el.siblings().toggle();
-				isDirty = true;
+				$li.find('.tbAddData').first().show();
+
+				//Om naar terug te scrollen als je een ander item wilt wijzigen, terwijl deze al is gewijzigd.
+				$changedItem = $li;
+
 			//saveDetails
 			} else if ($el.hasClass('saveDetails')) {
 				toastr['info']('OPGESLAGEN!');
-				$el.hide();
-				$el.siblings().toggle();
-				// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
-				var $li = $el.closest('li');
-				var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
-				$forms.find('input[type=text]').attr('readonly', '');
-				$li.children('a').children('input[type=text]').attr('readonly', '');
+				resetItemToNonEditState($el.closest('li'));
 				isDirty = false;
 			//escapeDetails
 			} else if ($el.hasClass('escapeDetails')) {
 				toastr['info']('GEANNULEERD!');
-				$el.hide();
-				$el.siblings().toggle();
-				// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
-				var $li = $el.closest('li');
-				var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
-				$forms.find('input[type=text]').attr('readonly', '');
-				$li.children('a').children('input[type=text]').attr('readonly', '');
+				resetItemToNonEditState($el.closest('li'));
 				isDirty = false;
 			//deleteDetails
 			} else if ($el.hasClass('deleteDetails')) {
 				bootbox.confirm("Weet u zeker dat u dit item wilt verwijderen?. Alle geneste items zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
+						$el.closest('li').remove();
 						toastr['info']('VERWIJDERD!');
-						$el.hide();
-						$el.siblings().toggle();
-						// var $forms = $el.parent().siblings('.form-readonly').removeClass('edit');
-						var $li = $el.closest('li');
-						var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
-						$forms.find('input[type=text]').attr('readonly', '');
-						$li.children('a').children('input[type=text]').attr('readonly', '');
 						isDirty = false;
 					}
 				});
 			//deleteData
 			} else if ($el.hasClass('deleteData')) {
-				toastr['info']('VERWIJDERD!');
 				$el.closest('.form-group').remove();
 				isDirty = true;
 			//addData
 			} else if ($el.hasClass('addData')) {
-				toastr['info']('TOEGEVOEGD!');
+				var $frm = $el.closest('.tbAddData').prev('.form-horizontal');
+				$('<div class="form-group form-group-sm">' +
+				'<div class="col-sm-3">' +
+				'<input class="form-control edit-label" type="text">' +
+				'</div>' +
+				'<div class="col-sm-9">' +
+				'<div class="input-group ">' +
+				'<input class="form-control" type="text">' +
+				'<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>' +
+				'</div>' +
+				'</div>' +
+				'</div>').appendTo($frm);
+				//Altijd vlag zetten
 				isDirty = true;
 			}
 		});
 
+		$('#treeDiv').on('change', function(event) {
+			//Voorlopig geen onderscheid in welk type input is gewijzigd
+			isDirty = true;
+		});
 
 	});
 
