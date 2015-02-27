@@ -72,12 +72,6 @@
 					padding-left: 16px;
 				}
 			}
-			#treeDiv .addSiblingDiv {
-				position: absolute;
-				left: -21px;
-				top: 19px;
-			}
-
 		</style>
 	</head>
 	<body class="with-navbar-top">
@@ -118,7 +112,6 @@
 							<li class="tree-item">
 								<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Begane grond" readonly></a>
 								<div class="detailDiv" style="display: none;">
-									<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
 									<div style="text-align: right;">
 										<div class="tbEdit toolbar-sm btn-group">
 											<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
@@ -180,7 +173,6 @@
 										<li class="tree-item">
 											<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Hal" readonly></a>
 											<div class="detailDiv" style="display: none;">
-												<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
 												<div style="text-align: right;">
 													<div class="tbEdit toolbar-sm btn-group">
 														<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
@@ -242,200 +234,6 @@
 													<li class="tree-item">
 														<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Deur" readonly></a>
 														<div class="detailDiv" style="display: none;">
-															<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
-															<div style="text-align: right;">
-																<div class="tbEdit toolbar-sm btn-group">
-																	<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
-																	<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
-																	<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
-																	<button class="deleteDetails btn btn-default" title="Verwijder" style="display: none;"><i class="fa fa-trash"></i></button>
-																</div>
-															</div>
-															<h4>Vaste gegevens</h4>
-															<div class="form-horizontal form-readonly">
-																<div class="form-group form-group-sm">
-																	<label class="col-sm-3">
-																		label
-																	</label>
-																	<div class="col-sm-9">
-																		<input class="form-control" type="text" value="value" readonly>
-																	</div>
-																</div>
-																<div class="form-group form-group-sm">
-																	<label class="col-sm-3">
-																		label
-																	</label>
-																	<div class="col-sm-9">
-																		<input class="form-control" type="text" value="value" readonly>
-																	</div>
-																</div>
-															</div>
-															<h4>Variabele gegevens</h4>
-															<div class="form-horizontal form-readonly">
-																<div class="form-group form-group-sm">
-																	<div class="col-sm-3">
-																		<input class="form-control edit-label" type="text" value="label" readonly>
-																	</div>
-																	<div class="col-sm-9">
-																		<div class="input-group ">
-																			<input class="form-control" type="text" value="value" readonly>
-																			<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group form-group-sm">
-																	<div class="col-sm-3">
-																		<input class="form-control edit-label" type="text" value="label" readonly>
-																	</div>
-																	<div class="col-sm-9">
-																		<div class="input-group ">
-																			<input class="form-control" type="text" value="value" readonly>
-																			<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="tbAddData">
-																<div class="toolbar-sm btn-group">
-																	<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
-																</div>
-															</div>
-														</div>
-													</li>
-												</ul>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="tree-item">
-								<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="1e verdieping" readonly></a>
-								<div class="detailDiv" style="display: none;">
-									<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
-									<div style="text-align: right;">
-										<div class="tbEdit toolbar-sm btn-group">
-											<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
-											<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
-											<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
-											<button class="deleteDetails btn btn-default" title="Verwijder" style="display: none;"><i class="fa fa-trash"></i></button>
-										</div>
-									</div>
-									<h4>Vaste gegevens</h4>
-									<div class="form-horizontal form-readonly">
-										<div class="form-group form-group-sm">
-											<label class="col-sm-3">
-												label
-											</label>
-											<div class="col-sm-9">
-												<input class="form-control" type="text" value="value" readonly>
-											</div>
-										</div>
-										<div class="form-group form-group-sm">
-											<label class="col-sm-3">
-												label
-											</label>
-											<div class="col-sm-9">
-												<input class="form-control" type="text" value="value" readonly>
-											</div>
-										</div>
-									</div>
-									<h4>Variabele gegevens</h4>
-									<div class="form-horizontal form-readonly">
-										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
-											</div>
-											<div class="col-sm-9">
-												<div class="input-group ">
-													<input class="form-control" type="text" value="value" readonly>
-													<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="form-group form-group-sm">
-											<div class="col-sm-3">
-												<input class="form-control edit-label" type="text" value="label" readonly>
-											</div>
-											<div class="col-sm-9">
-												<div class="input-group ">
-													<input class="form-control" type="text" value="value" readonly>
-													<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="tbAddData">
-										<div class="toolbar-sm btn-group">
-											<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
-										</div>
-									</div>
-									<ul class="tree fa-ul">
-										<li class="tree-item">
-											<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Hal" readonly></a>
-											<div class="detailDiv" style="display: none;">
-												<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
-												<div style="text-align: right;">
-													<div class="tbEdit toolbar-sm btn-group">
-														<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
-														<button class="escapeDetails btn btn-default" title="Annuleer" style="display: none;"><i class="fa fa-ban"></i></button>
-														<button class="saveDetails btn btn-default" title="Opslaan" style="display: none;"><i class="fa fa-save"></i></button>
-														<button class="deleteDetails btn btn-default" title="Verwijder" style="display: none;"><i class="fa fa-trash"></i></button>
-													</div>
-												</div>
-												<h4>Vaste gegevens</h4>
-												<div class="form-horizontal form-readonly">
-													<div class="form-group form-group-sm">
-														<label class="col-sm-3">
-															label
-														</label>
-														<div class="col-sm-9">
-															<input class="form-control" type="text" value="value" readonly>
-														</div>
-													</div>
-													<div class="form-group form-group-sm">
-														<label class="col-sm-3">
-															label
-														</label>
-														<div class="col-sm-9">
-															<input class="form-control" type="text" value="value" readonly>
-														</div>
-													</div>
-												</div>
-												<h4>Variabele gegevens</h4>
-												<div class="form-horizontal form-readonly">
-													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
-														</div>
-														<div class="col-sm-9">
-															<div class="input-group ">
-																<input class="form-control" type="text" value="value" readonly>
-																<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-															</div>
-														</div>
-													</div>
-													<div class="form-group form-group-sm">
-														<div class="col-sm-3">
-															<input class="form-control edit-label" type="text" value="label" readonly>
-														</div>
-														<div class="col-sm-9">
-															<div class="input-group ">
-																<input class="form-control" type="text" value="value" readonly>
-																<a class="deleteData input-group-addon" href="javascript:;"><i class="deleteData fa fa-minus fa-fw"></i></a>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="tbAddData">
-													<div class="toolbar-sm btn-group">
-														<button class="addData btn btn-default" title="Voeg gegeven toe"><i class="fa fa-plus"></i></button>
-													</div>
-												</div>
-												<ul class="tree fa-ul">
-													<li class="tree-item">
-														<a class="tree-item-link" href="javascript:;"><i class="tree-item-link fa-li fa fa-chevron-circle-right fa-lg"></i><input class="form-control" type="text" value="Deur" readonly></a>
-														<div class="detailDiv" style="display: none;">
-															<div class="addSiblingDiv"><a href="javascript:;" title="Voeg element op hetzelfde niveau toe"><i class="addSibling fa fa-plus-square-o"></i></a></div>
 															<div style="text-align: right;">
 																<div class="tbEdit toolbar-sm btn-group">
 																	<button class="editDetails btn btn-default" title="Wijzig"><i class="fa fa-pencil"></i></button>
@@ -502,6 +300,11 @@
 								</div>
 							</li>
 						</ul>
+						<div style="text-align: right;">
+							<div class="toolbar-sm btn-group">
+								<button class="addItem btn btn-default" title="Voeg item toe"><i class="fa fa-plus"></i><i class="fa fa-plus"></i></button>
+							</div>
+						</div>
 					</div> <!-- treeDiv -->
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
@@ -568,7 +371,6 @@
 			var $tb = $li.find('.tbEdit').first();
 			$tb.children().hide();
 			$tb.children('.editDetails').show();
-			$tb.children('.addFirstChild').show();
 			//inputs readonly maken
 			var $forms = $li.children('.detailDiv').children('.form-readonly').removeClass('edit');
 			$forms.find('input[type=text]').attr('readonly', '');
@@ -585,20 +387,6 @@
 			if ($el.hasClass('tree-item-link')) {
 				var $li = $el.closest('li');
 				var $detailDiv = $li.children('.detailDiv').toggle();
-				//als niveau is opengeklapt en er zijn geneste items
-				//controleren of er een addFirstChild knop is
-				//zo niet, toon dan addFirstChild knop
-				//zo ja, doe niets
-				if ($detailDiv.is(':visible') && ($detailDiv.children('ul.tree').length == 0)) {
-					//is er al een addFirstChild knop ?
-					//zo niet, maak er een
-					//zo ja doe niets
-					var $tb = $li.find('.tbEdit').first();
-					if ($tb.children('.addFirstChild').length == 0) {
-						//Maak een knop
-						$('<button class="addFirstChild btn btn-default" title="Voeg genest element toe"><i class="fa fa-plus"></i></button>').appendTo($tb);
-					}
-				}
 				$li.children('a').children('i').toggleClass('fa-rotate-90');
 			//editDetails
 			} else if ($el.hasClass('editDetails')) {
@@ -636,7 +424,7 @@
 				isDirty = false;
 			//deleteDetails
 			} else if ($el.hasClass('deleteDetails')) {
-				confirm("Weet u zeker dat u dit element wilt verwijderen?<br/>Alle geneste elementen zullen ook worden verwijderd!!!", function(result) {
+				confirm("Weet u zeker dat u dit item wilt verwijderen?<br/>Alle geneste items zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
 						$el.closest('li').remove();
 						toastr['info']('VERWIJDERD!');
@@ -663,13 +451,6 @@
 				'</div>').appendTo($frm);
 				//Altijd vlag zetten
 				isDirty = true;
-			//addData
-			} else if ($el.hasClass('addFirstChild')) {
-				toastr['info']('Nieuw child element');
-				//isDirty-vlag????????
-			} else if ($el.hasClass('addSibling')) {
-				toastr['info']('Nieuw sibling element');
-				//isDirty-vlag????????
 			}
 		});
 
@@ -682,6 +463,15 @@
 
 })();
 
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src='//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
 //]]>
 </script>
 
