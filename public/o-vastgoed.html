@@ -600,8 +600,9 @@
 					}
 				}
 				$li.children('a').children('i').toggleClass('fa-rotate-90');
-			//editDetails
-			} else if ($el.hasClass('editDetails')) {
+			//editDetails (met chrome hack)
+			} else if ($el.hasClass('editDetails') || $el.parent().hasClass('editDetails')) {
+				$el = $el.closest('.editDetails');
 				//Verhinder bewerken van dit level als isDirty
 				if (isDirty) {
 					bootbox.alert('Er zijn wijzigingen in een ander item die nog niet zijn opgeslagen.<br/>U moet deze wijzingen eerst opslaan of annuleren voordat u een ander item kunt wijzigen.', function() {
@@ -623,19 +624,21 @@
 
 				//Om naar terug te scrollen als je een ander item wilt wijzigen, terwijl deze al is gewijzigd.
 				$changedItem = $li;
-
-			//saveDetails
-			} else if ($el.hasClass('saveDetails')) {
+			//saveDetails (met chrome hack)
+			} else if ($el.hasClass('saveDetails') || $el.parent().hasClass('saveDetails')) {
+				$el = $el.closest('.saveDetails');
 				toastr['info']('OPGESLAGEN!');
 				resetItemToNonEditState($el.closest('li'));
 				isDirty = false;
-			//escapeDetails
-			} else if ($el.hasClass('escapeDetails')) {
+			//escapeDetails (met chrome hack)
+			} else if ($el.hasClass('escapeDetails') || $el.parent().hasClass('escapeDetails')) {
+				$el = $el.closest('.escapeDetails');
 				toastr['info']('GEANNULEERD!');
 				resetItemToNonEditState($el.closest('li'));
 				isDirty = false;
-			//deleteDetails
-			} else if ($el.hasClass('deleteDetails')) {
+			//deleteDetails (met chrome hack)
+			} else if ($el.hasClass('deleteDetails') || $el.parent().hasClass('deleteDetails')) {
+				$el = $el.closest('.deleteDetails');
 				confirm("Weet u zeker dat u dit element wilt verwijderen?<br/>Alle geneste elementen zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
 						$el.closest('li').remove();
@@ -647,8 +650,9 @@
 			} else if ($el.hasClass('deleteData')) {
 				$el.closest('.form-group').remove();
 				isDirty = true;
-			//addData
-			} else if ($el.hasClass('addData')) {
+			//addData (met chrome hack)
+			} else if ($el.hasClass('addData') || $el.parent().hasClass('addData')) {
+				$el = $el.closest('.addData');
 				var $frm = $el.closest('.tbAddData').prev('.form-horizontal');
 				$('<div class="form-group form-group-sm">' +
 				'<div class="col-sm-3">' +
@@ -663,8 +667,9 @@
 				'</div>').appendTo($frm);
 				//Altijd vlag zetten
 				isDirty = true;
-			//addData
-			} else if ($el.hasClass('addFirstChild')) {
+			//addFirstChild (met chrome hack)
+			} else if ($el.hasClass('addFirstChild') || $el.parent().hasClass('addFirstChild')) {
+				$el = $el.closest('.addFirstChild');
 				toastr['info']('Nieuw child element');
 				//isDirty-vlag????????
 			} else if ($el.hasClass('addSibling')) {
