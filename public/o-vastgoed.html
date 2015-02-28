@@ -601,6 +601,8 @@
 				}
 				$li.children('a').children('i').toggleClass('fa-rotate-90');
 			//editDetails (met chrome hack)
+			//klikken op <i> gedeelte in button is apart van rest knop
+			//dit itt andere browsers
 			} else if ($el.hasClass('editDetails') || $el.parent().hasClass('editDetails')) {
 				$el = $el.closest('.editDetails');
 				//Verhinder bewerken van dit level als isDirty
