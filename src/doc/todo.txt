@@ -13,5 +13,8 @@ if ( $(".child-element").parents("#main-nav").length == 1 ) {
 
 }
 
+Ook afvragen of het de allerlaatste node is.
+Indien ja : start invoerscherm laten zien
+
 2) scrollIntoView() zodanig aanpassen dat $changedItem en alle parent li's openklappen,
 daarna in beeld scrollen.
