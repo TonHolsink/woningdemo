@@ -1,0 +1,17 @@
+1) Bij deleten niveau:
+controleren op isdirty en of $changedItem een child is van het te deleten nivo
+Als het geen child is kun je gewoon deleten
+Als het wel een child is: isDirty = false en $changedItem = undefined
+
+if ( $(".child-element").parents("#main-nav").length == 1 ) {
+
+   // YES, the child element is inside the parent
+
+} else {
+
+   // NO, it is not inside
+
+}
+
+2) scrollIntoView() zodanig aanpassen dat $changedItem en alle parent li's openklappen,
+daarna in beeld scrollen.
