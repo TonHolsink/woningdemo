@@ -46,6 +46,9 @@
 			i.tree-item-link {
 				padding-top: 2px;
 			}
+			.has-changed > a i.tree-item-link {
+				color: red;
+			}
 			.toolbar-sm {
 				margin-top: 5px;
 				margin-bottom: 5px;
@@ -562,6 +565,11 @@
 		}, 1000);
 	};
 
+	function hiliteTree($li) {
+		$li.addClass('has-changed');
+		$li.parents('li').addClass('has-changed');
+	}
+
 	function resetItemToNonEditState($li) {
 		if (typeof $li !== 'undefined') {
 			//Alleen edit knop zichtbaar maken in toolbar
@@ -575,6 +583,8 @@
 			$li.children('a').children('input[type=text]').attr('readonly', '');
 			//addData knop verbergen
 			$li.find('.tbAddData').first().hide();
+			//hiliteTree ongedaan maken
+			$('li.has-changed').removeClass('has-changed');
 		}
 	}
 
@@ -609,6 +619,7 @@
 				if (isDirty) {
 					bootbox.alert('Er zijn wijzigingen in een ander item die nog niet zijn opgeslagen.<br/>U moet deze wijzingen eerst opslaan of annuleren voordat u een ander item kunt wijzigen.', function() {
 						//Scroll gewijzigde item in beeld
+						// hiliteTree($changedItem);
 						scrollIntoView($changedItem);
 					});
 					return;
@@ -682,6 +693,11 @@
 
 		$('#treeDiv').on('change', function(event) {
 			//Voorlopig geen onderscheid in welk type input is gewijzigd
+			if (!isDirty) {
+				console.log($(event.target).parents('li').first());
+				var $li = $(event.target).parents('li').first();
+				hiliteTree($li);
+			}
 			isDirty = true;
 		});
 
