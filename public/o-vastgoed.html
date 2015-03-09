@@ -116,17 +116,6 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-					<div id="newTreeItem" class="form-horizontal">
-						<div class="form-group form-group-sm">
-							<label class="col-sm-3">
-								Naam
-							</label>
-							<div class="col-sm-9">
-								<input class="form-control" type="text">
-							</div>
-						</div>
-					</div>
-
 					<div id="treeDiv">
 						<ul class="tree fa-ul">
 							<li class="tree-item">
@@ -665,9 +654,13 @@
 				$el = $el.closest('.deleteDetails');
 				confirm("Weet u zeker dat u dit element wilt verwijderen?<br/>Alle geneste elementen zullen ook worden verwijderd!!!", function(result) {
 					if (result) {
-						$el.closest('li').remove();
+						var $li = $el.closest('li');
+						$li.remove();
+						if ($li.hasClass('has-changed')) {
+							$('li.has-changed').removeClass('has-changed');
+							isDirty = false;
+						}
 						toastr['info']('VERWIJDERD!');
-						isDirty = false;
 					}
 				});
 			//deleteData
