@@ -60,7 +60,7 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-
+					<button id="showPopup">POPUP</button>
 					<div id="popup" style="display: none;">
 						<div id="newTreeItem" class="form-horizontal">
 							<div class="form-group form-group-sm">
@@ -72,7 +72,8 @@
 								</div>
 							</div>
 							<div class="form-group form-group-sm">
-								<button class="btn btn-primary">Close</button>
+								<button id="savePopup" class="btn btn-primary">Opslaan</button>
+								<button id="escapePopup" class="btn btn-primary">Annuleren</button>
 							</div>
 						</div>
 					</div>
@@ -104,11 +105,21 @@
 	 * The jQuery $(document).ready() block.
 	 */
 	$(function() {
-		$('#popup').bPopup({
-			// easing: 'easeOutBack', //uses jQuery easing plugin
-			speed: 450,
-			transition: 'slideDown',
-			modalClose: false
+		$('#showPopup').on('click', function() {
+			$('#popup').bPopup({
+				// easing: 'easeOutBack', //uses jQuery easing plugin
+				speed: 450,
+				transition: 'slideDown',
+				modalClose: false
+			});
+		});
+		$('#escapePopup').on('click', function() {
+			alert('Annuleren');
+			$('#popup').bPopup().close();
+		});
+		$('#savePopup').on('click', function() {
+			alert('Opslaan');
+			$('#popup').bPopup().close();
 		});
 	});
 
