@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body class="with-navbar-top">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data1-toggle="collapse" data1-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="o-index.html"><img class="logo" src="img/mijnwoonwaard.png" /></a>
+				</div> <!-- .navbar-header -->
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+					<li class="active"><a href="o-index.html">Home</a></li>
+					<li><a href="#profiel">Mijn Profiel</a></li>
+					<li><a href="o-planning.html">Planning</a></li>
+					<li><a href="o-dashboard.html">Dashboard</a></li>
+					<li><a href="#faq">Faq</a></li>
+					</ul>
+					<div class="navbar-right status">
+						Ingelogd als: Bas de Jong
+					</div>
+				</div><!-- .navbar-collapse -->
+			</div> <!-- .container -->
+		</div> <!-- .navbar -->
+
+		<div class="main-intro"> </div>
+		<div class="container">
+			<div class="main-content">
+				<div class="content-area">
+
+					<div class="row">
+						<div class="panel panel-default col-md-4">
+							<div class="panel-heading"><strong>Memory</strong></div>
+							<div class="panel-body">
+								<div id="chart_div1" style="height: 300px; margin-left:auto; margin-right: auto; width: 90%;"></div>
+							</div>
+						</div>
+						<div class="panel panel-default col-md-4">
+							<div class="panel-heading"><strong>CPU</strong></div>
+							<div class="panel-body">
+								<div id="chart_div2" style="height: 300px; margin-left:auto; margin-right: auto; width: 90%;"></div>
+							</div>
+						</div>
+						<div class="panel panel-default col-md-4">
+							<div class="panel-heading"><strong>Network</strong></div>
+							<div class="panel-body">
+								<div id="chart_div3" style="height: 300px; margin-left:auto; margin-right: auto; width: 90%;"></div>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- .content-area -->
+			</div> <!-- .main-content -->
+		</div> <!-- .container -->
+
+		<div class="container">
+			<div class="footer">
+				<hr>
+				<footer>
+					<p>&copy; YourRequest 2014</p>
+				</footer>
+			</div> <!-- footer -->
+		</div> <!-- container -->
+
+		<script src="js/vendor/jquery-1.11.0.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script type="text/javascript" src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization","version":"1","packages":["gauge"]}]}'></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function() {
+
+	var chart1, chart2, chart3;
+	var data1 = google.visualization.arrayToDataTable([
+		['Label', 'Value'],
+		// ['Memory', 80]
+		['', 80]
+	]);
+	var data2 = google.visualization.arrayToDataTable([
+		['Label', 'Value'],
+		// ['CPU', 55]
+		['', 55]
+	]);
+	var data3 = google.visualization.arrayToDataTable([
+		['Label', 'Value'],
+		// ['Network', 68]
+		['', 68]
+	]);
+
+	var options1 = {
+		// width: 400, height: 200,
+		greenColor: "#109618",
+		yellowColor: "#ff9900",
+		redColor: "#dc3912",
+		greenFrom: 0, greenTo: 75,
+		yellowFrom:75, yellowTo: 90,
+		redFrom: 90, redTo: 100,
+		majorTicks: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
+		minorTicks: 2
+	};
+
+	var options2 = {
+		// width: 400, height: 200,
+		greenFrom: 0, greenTo: 60,
+		yellowFrom:60, yellowTo: 80,
+		redFrom: 80, redTo: 100,
+		majorTicks: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
+		minorTicks: 2
+	};
+
+	var options3 = {
+		// width: 400, height: 200,
+		greenFrom: 0, greenTo: 75,
+		yellowFrom:75, yellowTo: 90,
+		redFrom: 90, redTo: 100,
+		majorTicks: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
+		minorTicks: 2
+	};
+
+
+	function drawChart() {
+		data1.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+		chart1.draw(data1, options1);
+		data2.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+		chart2.draw(data2, options2);
+		data3.setValue(0, 1, 60 + Math.round(20 * Math.random()));
+		chart3.draw(data3, options3);
+	}
+
+	/**
+	 * The jQuery $(document).ready() block.
+	 */
+	$(function() {
+
+		$(window).resize(function() {
+			if(this.resizeTO) clearTimeout(this.resizeTO);
+			this.resizeTO = setTimeout(function() {
+				$(this).trigger('resizeEnd');
+			}, 500);
+		});
+
+		//redraw graph when window resize is completed
+		$(window).on('resizeEnd', function() {
+			drawChart();
+		});
+
+
+		function initChart() {
+			chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+			chart1.draw(data1, options1);
+			chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
+			chart2.draw(data2, options2);
+			chart3 = new google.visualization.Gauge(document.getElementById('chart_div3'));
+			chart3.draw(data3, options3);
+
+			setInterval(drawChart, 5000);
+		}
+
+
+		google.setOnLoadCallback(initChart);
+	});
+
+})();
+
+//]]>
+</script>
+
+
+	</body>
+</html>

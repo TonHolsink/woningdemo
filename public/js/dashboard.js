@@ -3,7 +3,7 @@
  * @author Ton Holsink
  *
  */
-function() {
+function () {
 	/**
 	 * @memberOf anonymous
 	 */
