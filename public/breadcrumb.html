@@ -14,10 +14,10 @@
 
 		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<style>
-			.breadcrumb > li.no-separator + li:before {
+			.breadcrumb > li.no-separator + li:before,
+			.breadcrumb > li + li.no-separator:before {
 				content: "";
 			}
-
 		</style>
 	</head>
 	<body class="with-navbar-top">
@@ -57,6 +57,7 @@
 						<li class="no-separator"><a href="#">Home</a></li>
 						<li><a href="#">Library</a></li>
 						<li class="active">Data</li>
+						<li class="no-separator pull-right">aaaaaa</li>
 					</ol>
 
 				</div> <!-- .content-area -->
