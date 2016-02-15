@@ -11,7 +11,20 @@
 		<meta name="viewport" content="width=device-width">
 
 		<link rel="stylesheet" href="css/styles.css">
-
+		<style type="text/css">
+			.tbl {
+				display: table;
+				height: 100%;
+			}
+			.cell {
+				display: table-cell;
+				height: 100%;
+				vertical-align: top;
+			}
+			.inner {
+				height: 100%;
+			}
+		</style>
 		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	</head>
 	<body class="with-navbar-top">
@@ -46,6 +59,38 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
+					<table class="table">
+						<thead>
+							<tr>
+								<th style="padding-left: 30px;">col</th>
+								<th>col</th>
+								<th>col</th>
+								<th>col</th>
+								<th>col</th>
+								<th>col</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="padding: 0;">
+									<div class="tbl">
+										<div class="cell" style="width: 30px;background-color: red; text-align: center; padding-top: 8px;">
+											<input type="checkbox">
+										</div>
+										<div class="cell" style="padding: 8px; background-color: yellow;">
+											<p>Text</p>
+											<p>Text</p>
+										</div>
+									</div>
+								</td>
+								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
+								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
+								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
+								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
+								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
+							</tr>
+						</tbody>
+					</table>
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
