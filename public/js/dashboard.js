@@ -3,7 +3,11 @@
  * @author Ton Holsink
  *
  */
-function () {
+
+(function () {
+
+	"use strict";
+
 	/**
 	 * @memberOf anonymous
 	 */
@@ -120,7 +124,7 @@ function () {
 		console.log(date + "");
 		fetchCharts();
 
-	};
+	}
 
 	/**
 	 * Iterates over graphData, and calls fetchGraph for each record
@@ -129,13 +133,13 @@ function () {
 	 * @memberOf anonymous
 	 */
 	function fetchCharts() {
-		console.log("graphShown: " + graphShown)
+		console.log("graphShown: " + graphShown);
 		for (var i = 0; i < graphShown.length; i++) {
 			var graph = graphData[graphShown[i]];
 			var divid = "graph" + i;
 			fetchGraph(graph, graph.period, divid);
-		};
-	};
+		}
+	}
 
 	/**
 	 * Fetches an individual graph through an Ajax call
@@ -148,7 +152,7 @@ function () {
 	function fetchGraph(graph, period, divid) {
 		$("#" + divid).empty();
 		showGraph(graph, period, divid);
-	};
+	}
 
 	/**
 	 * @memberOf anonymous
@@ -176,7 +180,7 @@ function () {
 				a.push(data.points[period][i]);
 			});
 			d.addRow(a);
-		};
+		}
 
 		var options = {
 			title: title,
@@ -233,7 +237,7 @@ function () {
 			// }
 		}
 
-	};
+	}
 
 	/**
 	 * Initializes the graph selects and binds the change event
@@ -257,7 +261,7 @@ function () {
 				graphShown[dividx] = i;
 			});
 		});
-	};
+	}
 
 	/**
 	 * Utility function for the period tabbar
@@ -277,7 +281,7 @@ function () {
 				tabs.append("<li data-period='" + p + "'" + klass + "><a href='javascript:' class='periodTab'>" + periodBtns[p] + "</a></li>");
 			});
 		}
-	};
+	}
 
 	/**
 	 * Initializes the magnified popup
@@ -288,7 +292,7 @@ function () {
 		$("#tblMag").empty();
 		$("#tblMagTot").empty();
 		$("#graphMag").empty();
-	};
+	}
 
 	/**
 	 * Initializes the charts
@@ -307,27 +311,26 @@ function () {
 	$(function() {
 		//BODY CLICK EVENTS
 		$("body").click(function(event) {
-			var el = $(event.target);
+			var el = $(event.target), idx, graph, graphMag;
 
 			//GRAFIEKEN VERGROOT ICOON
 			if (el.hasClass("magnify")) {
 				//Welk volgnummer heeft de graphdiv???
 				var dividx = el.parents("div.graphDiv").attr("data-divID");
 				//Welk graphData index hoort daar bij
-				var idx = graphShown[dividx];
+				idx = graphShown[dividx];
 				//Index van graphObject in array
-				var graph = graphData[idx];
+				graph = graphData[idx];
 				constructTabbar(idx);
 				initMagnify();
-				var graphMag = $("#graphMag").data("data", {"graphIdx": idx, "period": graph.period});
+				graphMag = $("#graphMag").data("data", {"graphIdx": idx, "period": graph.period});
 				$("#popupMag").bPopup({onClose: function() {
 					if (graph.period != graphMag.data("data").period) {
 						//synchroniseren graphId
 						graph.period = graphMag.data("data").period;
 						var divid = "graph" + dividx;
 						fetchGraph(graph, graph.period, divid);
-
-					};
+					}
 				}});
 				fetchGraph(graph, graph.period, "graphMag");
 			//GRAFIEKEN POPUP PERIODE BUTTONS
@@ -341,10 +344,10 @@ function () {
 						});
 						li.addClass("active");
 
-						var graphMag = $("#graphMag");
+						graphMag = $("#graphMag");
 						initMagnify();
-						var idx = graphMag.data("data").graphIdx;
-						var graph = graphData[idx];
+						idx = graphMag.data("data").graphIdx;
+						graph = graphData[idx];
 						graphMag.data("data").period = period;
 						fetchGraph(graph, period, "graphMag");
 					}

@@ -11,21 +11,6 @@
 		<meta name="viewport" content="width=device-width">
 
 		<link rel="stylesheet" href="css/styles.css">
-		<style type="text/css">
-			.tbl {
-				display: table;
-				height: 100%;
-			}
-			.cell {
-				display: table-cell;
-				height: 100%;
-				vertical-align: top;
-			}
-			.inner {
-				height: 100%;
-			}
-		</style>
-		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	</head>
 	<body class="with-navbar-top">
 		<!--[if lt IE 7]>
@@ -59,38 +44,26 @@
 		<div class="container">
 			<div class="main-content">
 				<div class="content-area">
-					<table class="table">
-						<thead>
-							<tr>
-								<th style="padding-left: 30px;">col</th>
-								<th>col</th>
-								<th>col</th>
-								<th>col</th>
-								<th>col</th>
-								<th>col</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td style="padding: 0;">
-									<div class="tbl">
-										<div class="cell" style="width: 30px;background-color: red; text-align: center; padding-top: 8px;">
-											<input type="checkbox">
-										</div>
-										<div class="cell" style="padding: 8px; background-color: yellow;">
-											<p>Text</p>
-											<p>Text</p>
-										</div>
-									</div>
-								</td>
-								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
-								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
-								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
-								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
-								<td>Hallo allemaal ik ben Ton Holsink en ik woon in Hilversum.</td>
-							</tr>
-						</tbody>
-					</table>
+
+					<div id="display1"></div>
+					<hr>
+					<div id="display2"></div>
+
+					<div id="_msg1"
+						data-msg-button-ok="Ok"
+						data-msg-button-cancel="Cancel"
+						data-msg-data-delete="Weet u zeker dat u <b>12345</b> wilt verwijderen?"
+						data-url-delete="/prism/report_delete.html"
+					></div>
+
+					<div id="_msg2"
+						data-msg = '{
+							"buttonOk": "Ok",
+							"buttonCancel": "Cancel",
+							"dataDelete": "Weet u zeker dat u <b>12345</b> wilt verwijderen?",
+							"urlDelete": "/prism/report_delete.html"
+						}'
+					></div>
 				</div> <!-- .content-area -->
 			</div> <!-- .main-content -->
 		</div> <!-- .container -->
@@ -104,7 +77,6 @@
 			</div> <!-- footer -->
 		</div> <!-- .container -->
 
-
 		<script src="js/vendor/jquery-1.11.0.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/tools.js"></script>
@@ -114,10 +86,19 @@
 
 (function() {
 
-	/**
-	 * The jQuery $(document).ready() block.
-	 */
+	var msg1 = $('#_msg1');
+	var msg2 = $('#_msg2').data('msg');
+
 	$(function() {
+
+		$('#display1').append(msg1.data('msg-button-ok') + '<br>');
+		$('#display1').append(msg1.data('msg-button-cancel') + '<br>');
+		$('#display1').append(msg1.data('msg-data-delete') + '<br>');
+		$('#display1').append(msg1.data('url-delete') + '<br>');
+		$('#display2').append(msg2.buttonOk + '<br>');
+		$('#display2').append(msg2.buttonCancel + '<br>');
+		$('#display2').append(msg2.dataDelete + '<br>');
+		$('#display2').append(msg2.urlDelete + '<br>');
 
 	});
 
